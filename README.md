@@ -1,4 +1,4 @@
-# Дипломный проект курса «Нарративный дизайн, базовый курс, 5 поток»
+# Курнаев | Дипломный проект курса «Нарративный дизайн, базовый курс, 5 поток»
 
 Диаграмма Ганта:
 https://docs.google.com/spreadsheets/d/1zTlscjsT6PhW6nc4zKSlrxv49U4i82hhnRSlx8zC1aU/edit?usp=sharing
