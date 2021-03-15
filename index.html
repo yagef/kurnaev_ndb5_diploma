@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Diploma_nd5</title>
+<title>Kurnaev_Diploma_nd5</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Diploma_nd5.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Diploma_nd5" startnode="2" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Kurnaev_Diploma_nd5.</tw-noscript></noscript></tw-story>
+<tw-storydata name="Kurnaev_Diploma_nd5" startnode="3" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 tw-story {
 	background-image: none;
@@ -27,14 +27,24 @@ tw-dialog {
 	color: #000000;
 }
 
-tw-sidebar {
+/*tw-sidebar {
 	display: none;
-}
+}*/
 
 tw-story[tags~="journal"] {
 	background: url(Images/paper.jpg);
   	font-family: 'Caveat', cursive;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="S0" tags="startup" position="575,200" size="100,100">(set: $name to &quot;&quot;)
+}
+
+tw-story[tags~="outside"] {
+	background-image: none;
+	background-color: #ffff00;
+	color: #ffffff;
+}
+
+tw-story[tags~="outside"] tw-link {
+	color: #ffffff;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag><tw-passagedata pid="1" name="S0" tags="startup" position="575,199" size="100,100">(set: $name to &quot;&quot;)
 (set: $rose to &quot;&quot;)
 (set: $only_friend to &quot;мой единственный друг&quot;)
 (set: $only_love to &quot;моя тайная любовь&quot;)
@@ -56,7 +66,20 @@ tw-story[tags~="journal"] {
 
 (click:?page)[=Снаружи на самом деле не так страшно. В основном пусто. Звери мирные, на них легко охотится. Я хороший охотник, потому меня здесь терпят.
 
-(click:?page)[=А еще у меня есть питомец — [[куроваран-&gt;I2]]. Я его очень люблю и постоянно приношу вкусняшки снаружи.]</tw-passagedata><tw-passagedata pid="4" name="I2" tags="" position="950,200" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+(click:?page)[=А еще у меня есть питомец — [[куроваран-&gt;P11]]. Я его очень люблю и постоянно приношу вкусняшки снаружи.]</tw-passagedata><tw-passagedata pid="4" name="P11" tags="shack" position="951,200" size="100,100">Что-то давно питомца не видно? [[Куда он запропастился?-&gt;P12]]</tw-passagedata><tw-passagedata pid="5" name="P12" tags="shack" position="951,350" size="100,100">Может, его съели хищники?
+Украли и потребуют выкуп?
+Заблудился и потерялся?
+Нашел другую семью?
+Его убили злодеи?
+Он попал в западню?
+
+[[Что думать, пойду его искать!-&gt;P13]]</tw-passagedata><tw-passagedata pid="6" name="P13" tags="outside" position="951,500" size="100,100">Ох, давненько я не был снаружи днём. Солнце сегодня жарит не по-детски. Ничего не видно!
+[[Пройдусь, пока оканчательно не сжарюсь.-&gt;P14]]</tw-passagedata><tw-passagedata pid="7" name="P14" tags="outside" position="951,649" size="100,100">(text-style:&quot;sway&quot;)[Жара! Пекло! Ад! Дышать нечем!
+Если так продолжится, то и помереть недолго!]
+[[Возвращаюсь домой, пока не поздно!-&gt;P15]]</tw-passagedata><tw-passagedata pid="8" name="P15" tags="" position="951,800" size="100,100">Быстрым шагом побежал обратно к куполу. Когда идешь обратно, ноги будто сами несут. Вернулся враз.
+[[У самого входа я заметил что-то необычное.-&gt;P16]]</tw-passagedata><tw-passagedata pid="9" name="P16" tags="" position="951,950" size="100,100">Заметил у купола необычное потемнение. Пришюрился и понял, это Шарик!
+Я подбежал ближе и обомлел: он мёртв. Бедняга пытался попасть внутрь, но без успеха.
+[[Он не должен был так просто погнибнуть. С ним что-то случилось!-&gt;P17]]</tw-passagedata><tw-passagedata pid="10" name="P17" tags="" position="951,1100" size="100,100">Я занём бездыханное тельце домой.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe" src="harlowe.js" type="text/javascript"></script>
 </body>
 </html>
