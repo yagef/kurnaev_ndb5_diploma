@@ -8,9 +8,9 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Kurnaev_Diploma_nd5.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Kurnaev_Diploma_nd5" startnode="3" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+<tw-storydata name="Kurnaev_Diploma_nd5" startnode="2" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
-tw-story {
+tw-story{
 	background-image: none;
 	background-color: #ffffff;
 	color: #000000;
@@ -44,19 +44,58 @@ tw-story[tags~="outside"] {
 
 tw-story[tags~="outside"] tw-link {
 	color: #ffffff;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag><tw-passagedata pid="1" name="S0" tags="startup" position="575,199" size="100,100">(set: $name to &quot;&quot;)
-(set: $rose to &quot;&quot;)
-(set: $only_friend to &quot;мой единственный друг&quot;)
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag><tw-passagedata pid="1" name="S0" tags="startup" position="200,200" size="100,100">(set: $only_friend to &quot;мой единственный друг&quot;)
 (set: $only_love to &quot;моя тайная любовь&quot;)
-(set: $annoying_girl to &quot;бесячая девченка&quot;)
-(set: $to_select to &quot;...&quot;)</tw-passagedata><tw-passagedata pid="2" name="I0" tags="journal" position="700,200" size="100,100">Сегодня я решил сделать свою первую запись в дневнике. Меня (link:&quot;зовут&quot;)[(show:?name_prompt)]…
-|name_prompt)[(set: $name to (prompt: &quot;Как меня зовут?&quot;, &quot;&quot;, &quot;Неважно&quot;, &quot;Вот так&quot;)) (go-to:&quot;I1&quot;)]</tw-passagedata><tw-passagedata pid="3" name="I1" tags="journal" position="825,200" size="100,100">Сегодня я решил сделать свою первую запись в дневнике. (if:$name is not &quot;&quot;)[Меня зовут $name.]
+(set: $closest_human to &quot;самый близкий человек&quot;)
+(set: $to_select to &quot;...&quot;)
+(set: $name to $to_select)
+(set: $rose to $to_select)
+(set: $selected to false)
+(set: $doubt to 1)
+(set: $max_doubt to 3)
+(set: $dad_color to #220066)
+(set: $hero_color to #558855)
+(set: $mom_color to #dd3333)
+(set: $rose_color to #ff3399)
+(set: $rose_color_angry to #ff0000)</tw-passagedata><tw-passagedata pid="2" name="I0" tags="journal" position="700,200" size="100,100">Сегодня я решил сделать свою первую запись в дневнике. Меня (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (prompt: &quot;Как меня зовут?&quot;, $to_select, &quot;Неважно&quot;, &quot;Вот так&quot;))](event:when $selected is true)[(click:?page)[=зовут $name.
+
+Я — мутант. Матушка моя скончалась при родах. Настолько огромный я был даже младенцем.
+
+(click:?page)[=Живу я в деревне. Деревня у озера Бакал. Когда-то оно было такое большое, что простиралось до самого горизонта. Но после взрыва испарилось, и местные шутят, что теперь и в бокал поместится.
+
+(click:?page)[=Деревней заправляют деды — старейшины. Они меня сроду невзлюбили. Говорят, что я убил свою маму. Говорят, что я урод. Ну, и ношу я маску, чтобы их не злить.
+
+(click:?page)[=Но есть и хорошие люди в деревне. У меня есть приёмная семья: Папа и Мама. Их дочь, Роза.
+
+(click:?page)[=Фамилия у них Сидоренко. Говорят, одни из первых тут поселились. В отличие от многих, они не просто концы с концами сводят, а вполне нормально живут.
+
+(click:?page)[=Мама и Папа со мной особо не разговаривают, да и палкой ударить не прочь. Говорят, это для моего же блага. Но спина всё равно болит.
+
+(click:?page)[=С Розой мы иногда играем. В казаков-разбойников. Я всегда разбойник, потому казак Роза отбивается от меня камнями.
+
+(click:?page)[=Если она камнем попадёт — то победила. Если я её коснусь — то я победил.
+
+(click:?page)[=У меня есть питомец — крысопёс. (link:&quot;Зовут…&quot;) $pet. Я его очень люблю и постоянно приношу вкусняшки снаружи. Он тоже здоровый, как и я. И его тоже никто кроме меня не любит.
+
+(click:?page)[=Наша деревня окружена куполом. Говорят, без него все бы давно умерли. Хотя у нас тут есть вода и воздух, поесть приходится искать снаружи.
+
+(click:?page)[=Это грязная и опасная работа. Никто не хочет её выполнять, потому отправляют меня.
+
+(click:?page)[=Снаружи на самом деле не так страшно. В основном пусто. Главное днём не выходить — пекло.
+
+(click:?page)[=Звери там мирные, их легко поймать. Я хороший охотник, потому меня здесь терпят.
+
+(click:?page)[=Иногда к нам в деревню приезжает караван, я разговариваю с охранниками. Они такие же мутанты как и я.
+
+(click:?page)[=Их жизнь совсем не похожа на мою, они уважаемые и со всеми на равных. Как бы мне хотелось посмотреть на столицу…
+
+(click:?page)[(goto: &quot;P11&quot;)]]</tw-passagedata><tw-passagedata pid="3" name="I1" tags="journal" position="825,200" size="100,100">Сегодня я решил сделать свою первую запись в дневнике. (if:$name is not &quot;&quot;)[Меня зовут $name.]
 
 Мне 12 лет, я мутант. Матушка моя скончалась при родах. Настолько огромный я был даже младенцем.
 
 (click:?page)[=Старейшины меня сразу невзлюбили. Говорят, что я убил свою маму. Говорят, что я урод. Я ношу маску, чтобы их не злить.
 
-(click:?page)[=Но есть и хорошие люди в деревне. У меня есть приёмная семья: папа и мама. Их дочь, Роза, (dropdown: 2bind $rose,$to_select,$only_friend,$only_love,$annoying_girl).
+(click:?page)[=Но есть и хорошие люди в деревне. У меня есть приёмная семья: папа и мама. Их дочь, Роза, (dropdown: 2bind $rose,$to_select,$only_friend,$only_love,$closest_human).
 
 (event:when $rose is not $to_select)[Расположилась деревня у озера Бакал. Когда-то оно было такое большое, что простиралось до самого горизонта. Но после взрыва испарилось, и местные говорят, что теперь и в бокал поместится.
 
@@ -66,20 +105,28 @@ tw-story[tags~="outside"] tw-link {
 
 (click:?page)[=Снаружи на самом деле не так страшно. В основном пусто. Звери мирные, на них легко охотится. Я хороший охотник, потому меня здесь терпят.
 
-(click:?page)[=А еще у меня есть питомец — [[куроваран-&gt;P11]]. Я его очень люблю и постоянно приношу вкусняшки снаружи.]</tw-passagedata><tw-passagedata pid="4" name="P11" tags="shack" position="951,200" size="100,100">Что-то давно питомца не видно? [[Куда он запропастился?-&gt;P12]]</tw-passagedata><tw-passagedata pid="5" name="P12" tags="shack" position="951,350" size="100,100">Может, его съели хищники?
-Украли и потребуют выкуп?
-Заблудился и потерялся?
-Нашел другую семью?
-Его убили злодеи?
-Он попал в западню?
+(click:?page)[=А еще у меня есть питомец — [[куроваран-&gt;P11]]. Я его очень люблю и постоянно приношу вкусняшки снаружи.]</tw-passagedata><tw-passagedata pid="4" name="Variable change test" tags="test" position="200,500" size="100,100">(set: $doubt to 3)(text-style:&quot;underline&quot;)[Сомнение: |doubt&gt;[$doubt] из $max_doubt.] //Your Text Here//
 
-[[Что думать, пойду его искать!-&gt;P13]]</tw-passagedata><tw-passagedata pid="6" name="P13" tags="outside" position="951,500" size="100,100">Ох, давненько я не был снаружи днём. Солнце сегодня жарит не по-детски. Ничего не видно!
-[[Пройдусь, пока оканчательно не сжарюсь.-&gt;P14]]</tw-passagedata><tw-passagedata pid="7" name="P14" tags="outside" position="951,649" size="100,100">(text-style:&quot;sway&quot;)[Жара! Пекло! Ад! Дышать нечем!
-Если так продолжится, то и помереть недолго!]
-[[Возвращаюсь домой, пока не поздно!-&gt;P15]]</tw-passagedata><tw-passagedata pid="8" name="P15" tags="" position="951,800" size="100,100">Быстрым шагом побежал обратно к куполу. Когда идешь обратно, ноги будто сами несут. Вернулся враз.
-[[У самого входа я заметил что-то необычное.-&gt;P16]]</tw-passagedata><tw-passagedata pid="9" name="P16" tags="" position="951,950" size="100,100">Заметил у купола необычное потемнение. Пришюрился и понял, это Шарик!
-Я подбежал ближе и обомлел: он мёртв. Бедняга пытался попасть внутрь, но без успеха.
-[[Он не должен был так просто погнибнуть. С ним что-то случилось!-&gt;P17]]</tw-passagedata><tw-passagedata pid="10" name="P17" tags="" position="951,1100" size="100,100">Я занём бездыханное тельце домой.</tw-passagedata></tw-storydata>
+(click:?page)[=
+(set: $doubt to (max: 0, it - 1))
+(replace: ?doubt)[$doubt]
+(click:?page)[=
+(set: $doubt to (max: 0, it - 1))
+(replace: ?doubt)[$doubt]
+(click:?page)[=
+(set: $doubt to (max: 0, it - 1))
+(replace: ?doubt)[$doubt]
+(click:?page)[=
+(set: $doubt to (max: 0, it - 1))
+(replace: ?doubt)[$doubt]
+(click:?page)[=
+(set: $doubt to (max: 0, it - 1))
+(replace: ?doubt)[$doubt]</tw-passagedata><tw-passagedata pid="5" name="P11" tags="" position="825,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="Color variable test" tags="test" position="200,600" size="100,100">(set: $test_color to #00ff00)
+(text-colour:$test_color)[Test]</tw-passagedata><tw-passagedata pid="7" name="Click texts test" tags="" position="200,700" size="100,100">(set: $test_counter to 0)(set: $test_text to &quot;&quot;)
+test
+(link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]
+(link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]
+(link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe" src="harlowe.js" type="text/javascript"></script>
 </body>
 </html>
