@@ -46,6 +46,10 @@ tw-story[tags~="l1"] {
 	background: url(Images/shack.jpg);
 }
 
+tw-story[tags~="l1_n"] {
+	background: url(Images/shack-night.jpg);
+}
+
 tw-story[tags~="l2"] {
 	background-image: none;
 	background-color: #ffff00;
@@ -65,7 +69,7 @@ tw-story[tags~="l3"] {
 }
 
 tw-story[tags~="l4"] {
-	background: url(Images/backyard.jpg);
+	background: url(Images/backyard-night.jpg);
 }
 
 tw-story[tags~="l5"] {
@@ -137,7 +141,7 @@ if (typeof Sound == "undefined") {
         }
     };
     window.Sound = Sound;
-}</script><tw-tag name="l1" color="orange"></tw-tag>,<tw-tag name="l2" color="yellow"></tw-tag>,<tw-tag name="l3" color="green"></tw-tag>,<tw-tag name="l6" color="red"></tw-tag>,<tw-tag name="l7" color="orange"></tw-tag>,<tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="200,200" size="100,100">{
+}</script><tw-tag name="l1" color="orange"></tw-tag>,<tw-tag name="l2" color="yellow"></tw-tag>,<tw-tag name="l3" color="green"></tw-tag>,<tw-tag name="l6" color="red"></tw-tag>,<tw-tag name="l7" color="orange"></tw-tag>,<tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag>,<tw-tag name="l4" color="green"></tw-tag>,<tw-tag name="l1_n" color="orange"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="200,200" size="100,100">{
 (set: $only_friend to &quot;мой единственный друг&quot;)
 (set: $only_love to &quot;моя тайная любовь&quot;)
 (set: $closest_human to &quot;самый близкий человек&quot;)
@@ -155,7 +159,7 @@ if (typeof Sound == "undefined") {
 (set: $rose_color to #ff3399)
 (set: $rose_color_angry to #ff0000)
 (set: $place to 0)
-}</tw-passagedata><tw-passagedata pid="2" name="I0" tags="l5" position="550,200" size="100,100">Сегодня я решил сделать свою первую запись в дневнике. Меня (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;))](event:when $selected is true)[(click:?page)[=зовут $name.
+}</tw-passagedata><tw-passagedata pid="2" name="I0" tags="l5" position="500,200" size="100,100">Сегодня я решил сделать свою первую запись в дневнике. Меня (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;))](event:when $selected is true)[(click:?page)[=зовут $name.
 
 Я — мутант. Матушка моя скончалась при родах. Настолько огромный я был даже младенцем.(set: $selected to false)
 
@@ -401,7 +405,7 @@ test
 (text-colour:$dad_color)[—Ох, дурак ты. Толку от тебя как от козла молока. Сиди дома и не высовывайся. Пока.]
 Отец вышел из лачуги, плюнул с досады на землю и пошел домой.
 
-[[Ох, похоже беда миновала.-&gt;P40]]</tw-passagedata><tw-passagedata pid="41" name="P30.1" tags="l1" position="950,1100" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P30&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+[[Ох, похоже беда миновала.-&gt;P40]]</tw-passagedata><tw-passagedata pid="41" name="P30.1" tags="l1" position="675,1100" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P30&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
 ---
 Я внезапно напрыгнул на отца. Если успею выхватить пистолет, то убить его и сбежать не составит труда.
 
@@ -409,7 +413,9 @@ test
 
 (text-colour:$dad_color)[— Вот так ты за заботу платишь, значит?]
 
-(link: &quot;Слушать отца.&quot;)[(set: $doubt = (min: $max_doubt, it + 5))(go-to:&quot;P38&quot;)]</tw-passagedata><tw-passagedata pid="42" name="P40" tags="" position="825,1250" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="43" name="P13" tags="l8" position="2575,600" size="100,100">Странная коробка. Никогда раньше таких не видел.
+(link: &quot;Слушать отца.&quot;)[(set: $doubt = (min: $max_doubt, it + 5))(go-to:&quot;P38&quot;)]</tw-passagedata><tw-passagedata pid="42" name="P40" tags="l1" position="825,1250" size="100,100">Откуда эти деньги и зачем так срочно нужны? Любопытство всё равно не даст мне покоя.
+
+[[Последую за ним-&gt;P41]]</tw-passagedata><tw-passagedata pid="43" name="P13" tags="l8" position="2575,600" size="100,100">Странная коробка. Никогда раньше таких не видел.
 
 [[Заглянуть внутрь.-&gt;P14]]</tw-passagedata><tw-passagedata pid="44" name="P14" tags="l8" position="2425,600" size="100,100">Внутри большой мешок с какой-то жестью.
 
@@ -443,7 +449,45 @@ test
 
 (text-colour:$dad_color)[— Ты меня напугал! Почему не пошел меня встретить?]
 (text-colour:$hero_color)[— Я не заметил тебя, Отец.]
-(text-colour:$dad_color)[— Что-то ты стал невнимательным. И не называй меня отцом. Для тебя я — Алексей Петрович. [[Ладно, не за этим я сюда пришел.-&gt;P24]]]</tw-passagedata></tw-storydata>
+(text-colour:$dad_color)[— Что-то ты стал невнимательным. И не называй меня отцом. Для тебя я — Алексей Петрович. [[Ладно, не за этим я сюда пришел.-&gt;P24]]]</tw-passagedata><tw-passagedata pid="56" name="P41" tags="l4" position="1150,900" size="100,100">(text-colour:$mom_color)[Мама] сегодня особенно недовольная. Хотя не то чтобы это редкость.
+(text-colour:$mom_color)[— Ну что? Он тебе все рассказал?]
+
+[[Слушать дальше.-&gt;P42]]</tw-passagedata><tw-passagedata pid="57" name="P42" tags="l4" position="1300,900" size="100,100">(text-colour:$dad_color)[— Нет… Либо он ничего не знает, либо хорошо врет.]
+(text-colour:$mom_color)[— Что будем делать с долгом? Эти деньги нам нужны сейчас!]
+
+[[Слушать дальше.-&gt;P43]]</tw-passagedata><tw-passagedata pid="58" name="P43" tags="l4" position="1450,900" size="100,100">(text-colour:$dad_color)[— Родная, я что-нибудь придумаю.]
+Мама оглянулась по сторонам.
+(text-colour:$mom_color)[— Ты понимаешь, что они в курсе ОТКУДА у нас эти деньги?]
+
+[[Слушать дальше.-&gt;P44]]</tw-passagedata><tw-passagedata pid="59" name="P44" tags="l4" position="1600,900" size="100,100">(text-colour:$dad_color)[— Да, я…]
+(text-colour:$mom_color)[— Ты понимаешь, ЧТО они с нами сделают, если ты ничего не придумаешь?]
+(text-colour:$dad_color)[— Конечно, родная…]
+
+[[Слушать дальше.-&gt;P45]]</tw-passagedata><tw-passagedata pid="60" name="P45" tags="l4" position="1750,900" size="100,100">(text-colour:$dad_color)[— Дорогая, успокойся. У меня есть план. 
+— Завтра приезжает караван, мы продадим им мальчишку. Он первоклассный материал.]
+
+[[Слушать дальше.-&gt;P46]]</tw-passagedata><tw-passagedata pid="61" name="P46" tags="l4" position="1900,900" size="100,100">Они говорят обо (text-colour:$hero_color)[мне]?!
+(text-colour:$mom_color)[— Это отличная идея!]
+В разговор внезапно вмешивается (text-colour:$rose_color)[Роза]. До этого она так тихо сидела, что я её и не заметил.
+(text-colour:$rose_color)[— Погодите-ка! Папа, ты обещал его мне!]
+
+[[Слушать дальше.-&gt;P47]]</tw-passagedata><tw-passagedata pid="62" name="P47" tags="l4" position="2050,900" size="100,100">(text-colour:$dad_color)[— Я помню солнышко, но сейчас нет другого выбора.]
+(text-colour:$rose_color)[— Зря терпела его выходки, что ли? Папа, придумай что-то другое!]
+
+[[Слушать дальше.-&gt;P48]]</tw-passagedata><tw-passagedata pid="63" name="P48" tags="l4" position="2200,900" size="100,100">(text-colour:$dad_color)[— Золотце, прости. Так нужно.]
+(text-colour:$rose_color_angry)[— ПАПА, ТЫ О-БЕ-ЩАЛ!]
+
+[[Слушать дальше.-&gt;P49]]</tw-passagedata><tw-passagedata pid="64" name="P49" tags="l4" position="2350,900" size="100,100">(text-colour:$dad_color)[— Не повышай голос на отца! Будет как я сказал и точка!]
+(text-colour:$rose_color_angry)[— (text-style:&quot;subscript&quot;)[Дурак…]]
+
+[[Слушать дальше.-&gt;P50]]</tw-passagedata><tw-passagedata pid="65" name="P50" tags="l4" position="2500,900" size="100,100">(text-colour:$dad_color)[— Ты что-то сказал!?]
+(text-colour:$rose_color)[— Нет, папа. Тебе послышалось.]
+(text-colour:$dad_color)[— То-то же!]
+
+[[Слушать дальше.-&gt;P51]]</tw-passagedata><tw-passagedata pid="66" name="P51" tags="l4" position="2650,900" size="100,100">В доме стоит напряженное молчание. Никто не хочет быть первым и разрушить это хрупкое перемирие.
+
+[[Подождать еще.-&gt;P51]]
+[[Пойти домой.-&gt;P52]]</tw-passagedata><tw-passagedata pid="67" name="P52" tags="l1_n" position="2800,900" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe" src="harlowe.js" type="text/javascript"></script></body>
 </body>
 </html>
