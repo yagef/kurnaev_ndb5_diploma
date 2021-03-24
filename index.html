@@ -56,10 +56,6 @@ tw-story[tags~="l1"] {
 	background: url(Images/shack.jpg);
 }
 
-tw-story[tags~="l1_n"] {
-	background: url(Images/shack-night.jpg);
-}
-
 tw-story[tags~="l2"] {
 	background-image: none;
 	background-color: #ffff00;
@@ -98,6 +94,10 @@ tw-story[tags~="l7"] {
 
 tw-story[tags~="l8"] {
 	background: url(Images/treasure.png);
+}
+
+tw-story[tags~="l9"] {
+	background: url(Images/shack-night.jpg);
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Sound namespace.
 if (typeof Sound == "undefined") {
     var Sound = {
@@ -151,7 +151,7 @@ if (typeof Sound == "undefined") {
         }
     };
     window.Sound = Sound;
-}</script><tw-tag name="l1" color="orange"></tw-tag>,<tw-tag name="l1_n" color="orange"></tw-tag>,<tw-tag name="l2" color="yellow"></tw-tag>,<tw-tag name="l3" color="green"></tw-tag>,<tw-tag name="l4" color="green"></tw-tag>,<tw-tag name="l6" color="red"></tw-tag>,<tw-tag name="l7" color="orange"></tw-tag>,<tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="200,200" size="100,100">{
+}</script><tw-tag name="l1" color="orange"></tw-tag>,<tw-tag name="l1_n" color="orange"></tw-tag>,<tw-tag name="l2" color="yellow"></tw-tag>,<tw-tag name="l3" color="green"></tw-tag>,<tw-tag name="l4" color="green"></tw-tag>,<tw-tag name="l6" color="red"></tw-tag>,<tw-tag name="l7" color="orange"></tw-tag>,<tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag>,<tw-tag name="l9" color="orange"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="200,200" size="100,100">{
 (set: $only_friend to &quot;мой единственный друг&quot;)
 (set: $only_love to &quot;моя тайная любовь&quot;)
 (set: $closest_human to &quot;самый близкий человек&quot;)
@@ -474,7 +474,7 @@ test
 (text-colour:$dad_color)[— Конечно, родная…]
 
 [[Слушать дальше.-&gt;P45]]</tw-passagedata><tw-passagedata pid="60" name="P45" tags="l4" position="1750,900" size="100,100">(text-colour:$dad_color)[— Дорогая, успокойся. У меня есть план. 
-— Завтра приезжает караван, мы продадим им мальчишку. Он первоклассный материал.]
+— Через неделю приезжает караван, мы продадим им мальчишку. Он первоклассный материал.]
 
 [[Слушать дальше.-&gt;P46]]</tw-passagedata><tw-passagedata pid="61" name="P46" tags="l4" position="1900,900" size="100,100">Они говорят обо (text-colour:$hero_color)[мне]?!
 (text-colour:$mom_color)[— Это отличная идея!]
@@ -502,7 +502,29 @@ test
 [[Слушать дальше.-&gt;P52]]</tw-passagedata><tw-passagedata pid="67" name="P52" tags="l4" position="2800,900" size="100,100">В доме стоит напряженное молчание. Никто не хочет быть первым и разрушить это хрупкое перемирие.
 
 [[Подождать еще.-&gt;P52]]
-[[Пойти домой.-&gt;P53]]</tw-passagedata><tw-passagedata pid="68" name="P53" tags="" position="2950,900" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+[[Пойти домой.-&gt;P53]]</tw-passagedata><tw-passagedata pid="68" name="P53" tags="l9" position="2950,900" size="100,100"> Ох… Ну и денек. Сначала $pet, теперь вот это всё.
+
+[[Попробую уснуть.-&gt;P54]]</tw-passagedata><tw-passagedata pid="69" name="P54" tags="l9" position="2950,1050" size="100,100"> Всякие мысли в голову лезут…
+
+[[Лечь на правый бок.-&gt;P54.1]]
+[[Лечь на левый бок.-&gt;P54.1]]
+[[Лечь на спину бок.-&gt;P54.1]]
+[[Лечь на живот бок.-&gt;P54.1]]</tw-passagedata><tw-passagedata pid="70" name="P54.1" tags="l9" position="2800,1050" size="100,100">Неудобно чего-то…
+
+[[Лечь на правый бок.-&gt;P54.2]]
+[[Лечь на левый бок.-&gt;P54.2]]
+[[Лечь на спину бок.-&gt;P54.2]]
+[[Лечь на живот бок.-&gt;P54.2]]</tw-passagedata><tw-passagedata pid="71" name="P54.2" tags="l9" position="2650,1050" size="100,100">Кто-то за окном? Да нет, показалось.
+
+[[Лечь на правый бок.-&gt;P54.3]]
+[[Лечь на левый бок.-&gt;P54.3]]
+[[Лечь на спину бок.-&gt;P54.3]]
+[[Лечь на живот бок.-&gt;P54.3]]</tw-passagedata><tw-passagedata pid="72" name="P54.3" tags="l9" position="2500,1050" size="100,100">Да нет, кто-то точно за окном. И кому это не спится?
+
+[[Лечь на правый бок.-&gt;P55]]
+[[Лечь на левый бок.-&gt;P55]]
+[[Лечь на спину бок.-&gt;P55]]
+[[Лечь на живот бок.-&gt;P55]]</tw-passagedata><tw-passagedata pid="73" name="P55" tags="" position="2350,1050" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe" src="harlowe.js" type="text/javascript"></script></body>
 </body>
 </html>
