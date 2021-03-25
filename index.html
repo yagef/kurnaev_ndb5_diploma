@@ -15,6 +15,8 @@
 <link rel="prefetch" as="image" href="Images/shack-night.jpg">
 <link rel="prefetch" as="image" href="Images/soil.jpg">
 <link rel="prefetch" as="image" href="Images/treasure.png">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Kurnaev_Diploma_nd5.</tw-noscript></noscript></tw-story>
@@ -151,7 +153,7 @@ if (typeof Sound == "undefined") {
         }
     };
     window.Sound = Sound;
-}</script><tw-tag name="l1" color="orange"></tw-tag>,<tw-tag name="l1_n" color="orange"></tw-tag>,<tw-tag name="l2" color="yellow"></tw-tag>,<tw-tag name="l3" color="green"></tw-tag>,<tw-tag name="l4" color="green"></tw-tag>,<tw-tag name="l6" color="red"></tw-tag>,<tw-tag name="l7" color="orange"></tw-tag>,<tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag>,<tw-tag name="l9" color="orange"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="200,200" size="100,100">{
+}</script><tw-tag name="l1" color="orange"></tw-tag>,<tw-tag name="l1_n" color="orange"></tw-tag>,<tw-tag name="l2" color="yellow"></tw-tag>,<tw-tag name="l3" color="green"></tw-tag>,<tw-tag name="l4" color="green"></tw-tag>,<tw-tag name="l6" color="red"></tw-tag>,<tw-tag name="l7" color="orange"></tw-tag>,<tw-tag name="l9" color="orange"></tw-tag>,<tw-tag name="outside" color="yellow"></tw-tag>,<tw-tag name="outside_deep" color="yellow"></tw-tag>,<tw-tag name="shack" color="orange"></tw-tag><tw-passagedata pid="1" name="Startup" tags="startup" position="200,200" size="100,100">{
 (set: $only_friend to &quot;мой единственный друг&quot;)
 (set: $only_love to &quot;моя тайная любовь&quot;)
 (set: $closest_human to &quot;самый близкий человек&quot;)
@@ -289,7 +291,7 @@ test
 
 (link: &quot;Прям у дома.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[[Самое то. Вырою яму здесь.-&gt;P11]]}(set: $counter to it + 1)(set: $place to 0)]
 (link: &quot;Ближе к куполу.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[[Самое то. Вырою яму здесь.-&gt;P11]]}(set: $counter to it + 1)(set: $place to 1)]
-(link: &quot;Посредине.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[[Самое то. Вырою яму здесь.-&gt;P11]]}(set: $counter to it + 1)(set: $place to 2)]</tw-passagedata><tw-passagedata pid="25" name="P11" tags="l7" position="2875,600" size="100,100">(link-reveal: &quot;Копаю…&quot;)[ 
+(link: &quot;Посредине.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[[Самое то. Вырою яму здесь.-&gt;P11]]}(set: $counter to it + 1)(set: $place to 2)]</tw-passagedata><tw-passagedata pid="25" name="P11" tags="l7" position="2875,600" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Music/shoveling.wav&#39;);&quot; /&gt;&lt;/div&gt;}(link-reveal: &quot;Копаю…&quot;)[ 
 
 
 
@@ -356,7 +358,7 @@ test
 
 
 
-(link-reveal: &quot;Копаю…&quot;)[ [[ДЗЫНЬ!-&gt;P12]]]]]]]]]</tw-passagedata><tw-passagedata pid="26" name="P12" tags="l7" position="2725,600" size="100,100">Опа… Лопата уперлась во что-то твердое.
+(link-reveal: &quot;Копаю…&quot;)[{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;} [[ДЗЫНЬ!-&gt;P12]]]]]]]]]</tw-passagedata><tw-passagedata pid="26" name="P12" tags="l7" position="2725,600" size="100,100">Опа… Лопата уперлась во что-то твердое.
 
 [[Что же это может быть?-&gt;P13]]</tw-passagedata><tw-passagedata pid="27" name="P38" tags="l1" position="500,500" size="100,100">Сомнение: |doubt&gt;[$doubt] из $max_doubt.
 ---
@@ -382,8 +384,8 @@ test
 (text-colour:$dad_color)[— Скучный говоришь? Что сегодня делал?]
 
 (link: &quot;Соврать.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P26.1&quot;)]
-(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="31" name="Sound test 1" tags="" position="200,825" size="100,100">[[Click -&gt; Sound Test 2]]</tw-passagedata><tw-passagedata pid="32" name=" Sound Test 2" tags="" position="200,950" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg.mp3&#39;);&quot; /&gt;&lt;/div&gt;}
-[[Click -&gt; Sound Test 3]]</tw-passagedata><tw-passagedata pid="33" name=" Sound Test 3" tags="" position="200,1075" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg2.mp3&#39;, 1);&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 4]]</tw-passagedata><tw-passagedata pid="34" name=" Sound Test 4" tags="" position="200,1200" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 5]]</tw-passagedata><tw-passagedata pid="35" name=" Sound Test 5" tags="" position="200,1325" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop(1);&quot; /&gt;&lt;/div&gt;}</tw-passagedata><tw-passagedata pid="36" name="P26" tags="l1" position="825,600" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="31" name="Sound test 1" tags="" position="200,825" size="100,100">[[Click -&gt; Sound Test 2]]</tw-passagedata><tw-passagedata pid="32" name=" Sound Test 2" tags="" position="200,950" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Music/bg.mp3&#39;);&quot; /&gt;&lt;/div&gt;}
+[[Click -&gt; Sound Test 3]]</tw-passagedata><tw-passagedata pid="33" name=" Sound Test 3" tags="" position="200,1075" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Music/bg2.mp3&#39;, 1);&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 4]]</tw-passagedata><tw-passagedata pid="34" name=" Sound Test 4" tags="" position="200,1200" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 5]]</tw-passagedata><tw-passagedata pid="35" name=" Sound Test 5" tags="" position="200,1325" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop(1);&quot; /&gt;&lt;/div&gt;}</tw-passagedata><tw-passagedata pid="36" name="P26" tags="l1" position="825,600" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— По правде говоря, сегодня хоронил своего питомца. Его какой-то охотник подстрелил.]
 (text-colour:$dad_color)[— А ты говоришь «скучный день»! Может еще что интересного было?]
