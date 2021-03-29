@@ -17,6 +17,19 @@ tw-story tw-passage {
 
 tw-icon[alt~="Restart"] {
   	color: #000000;
+	background-color: #ffffffaa;
+  	opacity: 1;
+}
+
+tw-icon[alt~="Undo"] {
+  	color: #000000;
+	background-color: #ffffffaa;
+  	opacity: 1;
+}
+
+tw-icon[alt~="Redo"] {
+  	color: #000000;
+	background-color: #ffffffaa;
   	opacity: 1;
 }
 
@@ -233,18 +246,17 @@ if (typeof Sound == "undefined") {
 test
 (link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]
 (link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]
-(link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]</tw-passagedata><tw-passagedata pid="7" name="P2" tags="l1" position="975,196.66666666666666" size="100,100">(set:$visited to 0)(link-reveal: &quot;Может, его съели хищники?&quot;)[ Да он сам кого хочешь съест.(set: $visited to it + 1)]
+(link: &quot;text&quot;)[(set: $test_counter to it + 1)(cond: $test_counter is 1, &quot;1&quot;,$test_counter is 2, &quot;2&quot;,$test_counter is 3, &quot;3&quot;)]</tw-passagedata><tw-passagedata pid="7" name="P2" tags="l1" position="975,200" size="100,100">(set:$visited to 0)(link-reveal: &quot;Может, его съели хищники?&quot;)[ Да он сам кого хочешь съест.(set: $visited to it + 1)]
 (link-reveal: &quot;Украли и потребуют выкуп?&quot;)[ Его не так просто поймать!(set: $visited to it + 1)]
 (link-reveal: &quot;Заблудился и потерялся?&quot;)[ $pet лучший следопыт.(set: $visited to it + 1)]
 (link-reveal: &quot;Нашел другую семью?&quot;)[ Он любит меня больше всех!(set: $visited to it + 1)]
 (link-reveal: &quot;Крысопса убили злодеи?&quot;)[ Да кому он помешает?(set: $visited to it + 1)]
 (link-reveal: &quot;Попал в западню?&quot;)[ Ни одна западня его не задержит.(set: $visited to it + 1)]
 (link-reveal: &quot;Съел какую-то отраву?&quot;)[ Да не, он даже камни глотать может.(set: $visited to it + 1)]
-(event: when $visited &gt;= 7)[
----
+(event: when $visited &gt;= 7)[---
 [[Искать.-&gt;P3]]]</tw-passagedata><tw-passagedata pid="8" name="P3" tags="l3" position="1125,200" size="100,100">Чего гадать, пойду поищу снаружи. Ох, давненько (text-colour:$hero_color)[Я] не был снаружи днём. Солнце жарит не по-детски. Ничего не видно!
 ---
-[[Искать!-&gt;P3.1]]</tw-passagedata><tw-passagedata pid="9" name="P3.1" tags="l2" position="1300,198.33333333333334" size="100,100">(set: $max_visits to 4)(text-style:&quot;fidget&quot;)[Солнце не унимается. Раскаленный песок слепит. Куда пойти?
+[[Искать!-&gt;P3.1]]</tw-passagedata><tw-passagedata pid="9" name="P3.1" tags="l2" position="1300,198" size="100,100">(set: $max_visits to 4)(text-style:&quot;fidget&quot;)[Солнце не унимается. Раскаленный песок слепит. Куда пойти?
 ---
 (if:visits is $max_visits)[[[Пойти на юг.-&gt;P3.2]]
 [[Пойти на восток.-&gt;P3.2]]
@@ -279,7 +291,7 @@ test
 Это же… (color:$pet_color)[$pet]! Что с тобой случилось?
 ---
 [[Осмотреть.-&gt;P6]]</tw-passagedata><tw-passagedata pid="17" name="P6" tags="l3" position="2525,200" size="100,100">(text-colour:$hero_color)[Я] взял тельце. (color:$pet_color)[$pet] совсем иссох и почти ничего не весит. Прошел через ворота и попал вовнутрь.
-
+---
 [[Рассмотреть тельце.-&gt;P7]]</tw-passagedata><tw-passagedata pid="18" name="P7" tags="l6" position="2675,200" size="100,100">Спина сильно обгорела. Между меха попадаются засохшие трупики мух.
 ---
 [[Осмотреть левый бок.-&gt;P7.1]]
@@ -305,8 +317,8 @@ test
 ---
 [[Копать могилу.-&gt;P10]]</tw-passagedata><tw-passagedata pid="24" name="P10" tags="l1" position="3025,600" size="100,100">(set: $counter to 0)Где копать?
 
-(link: &quot;Прям у дома.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[[Самое то. Вырою яму здесь.-&gt;P11]]}(set: $counter to it + 1)(set: $place to 0)]
-(link: &quot;Ближе к куполу.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[[Самое то. Вырою яму здесь.-&gt;P11]]}(set: $counter to it + 1)(set: $place to 1)]
+(link: &quot;Прям у дома.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[Самое то. Вырою яму здесь.]}(set: $counter to it + 1)(set: $place to 0)]
+(link: &quot;Ближе к куполу.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[Самое то. Вырою яму здесь.]}(set: $counter to it + 1)(set: $place to 1)]
 (link: &quot;Посредине.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[Самое то. Вырою яму здесь.]}(set: $counter to it + 1)(set: $place to 2)](event:when $counter is 3)[
 ---
 [[Копать.-&gt;P11]]]</tw-passagedata><tw-passagedata pid="25" name="P11" tags="l7" position="2875,600" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/shoveling.wav&#39;);&quot; /&gt;&lt;/div&gt;}(link-reveal: &quot;Копать…&quot;)[ 
