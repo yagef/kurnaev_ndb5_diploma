@@ -60,15 +60,15 @@ tw-story[tags~="l1"] {
 	background-size: cover;
 }
 
+tw-story[tags~="l2_intro"] {
+	background-image: none;
+	background-color: #ffff00;
+}
+
 tw-story[tags~="l2"] {
 	background-image: none;
 	background-color: #ffff00;
 	color: #ddd;
-}
-
-tw-story[tags~="l2_intro"] {
-	background-image: none;
-	background-color: #ffff00;
 }
 
 tw-story[tags~="l2"] tw-link {
@@ -76,7 +76,7 @@ tw-story[tags~="l2"] tw-link {
 }
 
 tw-story[tags~="l2"] tw-expression {
-	color: #ffffff;
+	color: #ddd;
 }
 
 tw-story[tags~="l3"] {
@@ -93,6 +93,7 @@ tw-story[tags~="l5"] {
 	background: url(Images/paper.jpg);
   	font-family: 'Caveat', cursive;
 	flex-direction: column;
+	font-size: xx-large;
 }
 
 tw-story[tags~="l6"] {
@@ -261,7 +262,7 @@ if (typeof Sound == "undefined") {
 (replace: ?doubt)[$doubt]
 (click:?page)[=
 (set: $doubt to (max: 0, it - 1))
-(replace: ?doubt)[$doubt]</tw-passagedata><tw-passagedata pid="4" name="P1" tags="l1" position="675,375" size="100,100">Что-то (color:$pet_color)[$pet] давно не показывался. Обычно он снаружи поиграет, а потом назад вернется.(link-reveal:&quot;Может случилось что?&quot;)[=
+(replace: ?doubt)[$doubt]</tw-passagedata><tw-passagedata pid="4" name="P1" tags="l1" position="675,375" size="100,100">Как приехали, (color:$pet_color)[$pet] не показывался. Обычно он снаружи поиграет, а потом назад вернется. (link-reveal:&quot;Может случилось что?&quot;)[=
 ---
 [[Подумать.-&gt;P2]]</tw-passagedata><tw-passagedata pid="5" name="Color variable test" tags="test" position="200,650" size="100,100">(set: $test_color to #00ff00)
 (text-colour:$test_color)[Test]</tw-passagedata><tw-passagedata pid="6" name="Click texts test" tags="" position="200,750" size="100,100">(set: $test_counter to 0)(set: $test_text to &quot;&quot;)
@@ -275,8 +276,9 @@ test
 (link-reveal: &quot;Крысопса убили злодеи?&quot;)[ Да кому он помешает?(set: $visited to it + 1)]
 (link-reveal: &quot;Попал в западню?&quot;)[ Ни одна западня его не задержит.(set: $visited to it + 1)]
 (link-reveal: &quot;Съел какую-то отраву?&quot;)[ Да не, он даже камни глотать может.(set: $visited to it + 1)]
-(event: when $visited &gt;= 7)[---
-[[Искать.-&gt;P3]]]</tw-passagedata><tw-passagedata pid="8" name="P3" tags="l3" position="975,375" size="100,100">(set: $visits to 0)Пойду поищу снаружи. Ох, давненько (text-colour:$hero_color)[Я] не был снаружи днём. Солнце жарит не по-детски. Ничего не видно!
+(event: when $visited &gt;= 7)[(link-reveal: &quot;Заперли снаружи?&quot;)[=(event: when $visited &gt;= 7)[ Было дело! $pet от жары сбежал в пустыню. Еле нашел тогда!
+---
+[[Искать.-&gt;P3]]]]</tw-passagedata><tw-passagedata pid="8" name="P3" tags="l3" position="975,375" size="100,100">(set: $visits to 0)Пойду поищу снаружи. Ох, давненько (text-colour:$hero_color)[Я] не был снаружи днём. Солнце жарит не по-детски. Ничего не видно!
 ---
 [[Искать!-&gt;P3.1]]
 [[Вернуться назад.-&gt;P2.1]]</tw-passagedata><tw-passagedata pid="9" name="P3.1" tags="l2_intro" position="1125,200" size="100,100">(text-style:&quot;fidget&quot;)[Солнце не унимается. Раскаленный песок слепит. Куда пойти?]
