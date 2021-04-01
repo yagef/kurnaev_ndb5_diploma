@@ -201,6 +201,7 @@ if (typeof Sound == "undefined") {
 (set: $rose_color to #ff3399)
 (set: $rose_color_angry to #ff0000)
 (set: $place to 0)
+(set: $doubt_text to &quot;Уровень сомнения&quot;)
 }</tw-passagedata><tw-passagedata pid="2" name="I0" tags="l5" position="200,400" size="100,100">{&lt;/div&gt;&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/writing.wav&#39;);&quot; /&gt;&lt;/div&gt;}Сегодня (color:$hero_color)[Я] решил сделать свою первую запись в дневнике. Меня (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;))](event:when $selected is true)[(click:?page)[=зовут (color:$hero_color)[$name].
 
 (color:$hero_color)[Я] — мутант. Матушка моя скончалась при родах. Настолько огромный (color:$hero_color)[Я] был даже младенцем.(set: $selected to false)
@@ -409,17 +410,17 @@ test
 ---
 [[Осмотреть яму.-&gt;P12]]]</tw-passagedata><tw-passagedata pid="26" name="P12" tags="l7" position="2725,775" size="100,100">Опа… Лопата уперлась во что-то твердое. Что же это может быть?
 ---
-[[Посмотреть ближе.-&gt;P13]]</tw-passagedata><tw-passagedata pid="27" name="P38" tags="l1" position="500,675" size="100,100">Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+[[Посмотреть ближе.-&gt;P13]]</tw-passagedata><tw-passagedata pid="27" name="P38" tags="l1" position="500,675" size="100,100">$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$dad_color)[— Я услышал достаточно. Я относился к тебе хорошо, слишком хорошо.] — Отец достаёт лазер из-за пазухи. — (text-colour:$dad_color)[Ты не заслуживаешь жить, падла!]
 ---
-(text-colour:$dad_color)[[— Сейчас ты отправишься к своей шавке в-&gt;P39]] (text-colour:$dad_color)+(text-style:&quot;rumble&quot;)[&#39;&#39;АД!&#39;&#39;]</tw-passagedata><tw-passagedata pid="28" name="P39" tags="l5" position="500,825" size="100,100">(click:?page)[=Наверное, я прожил хорошую жизнь. Не такую, как хотелось бы, но всё же. Все прекрасные моменты пронеслись перед моими глазами.
+(text-colour:$dad_color)[[— Сейчас ты отправишься к своей шавке в-&gt;P39]] (text-colour:$dad_color)+(text-style:&quot;rumble&quot;)[&#39;&#39;АД!&#39;&#39;]</tw-passagedata><tw-passagedata pid="28" name="P39" tags="l5" position="500,825" size="100,100">Наверное, я прожил хорошую жизнь. Не такую, как хотелось бы, но всё же. Все прекрасные моменты пронеслись перед моими глазами.
 
-(click:?page)[=Я хотел бы открыть дневник и записать их. Потомкам осталась бы хоть какая-то кроха знаний обо мне. Кем я был, что любил.
+Я хотел бы открыть дневник и записать их. Потомкам осталась бы хоть какая-то кроха знаний обо мне. Кем я был, что любил.
 
-(click:?page)[=Жаль, что этому не бывать.
+Жаль, что этому не бывать.
 ---
-(click:?page)[=(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-reveal-goto:&quot;КОНЕЦ ⟲&quot;,&quot;P24&quot;)]</tw-passagedata><tw-passagedata pid="29" name="P24" tags="l1" position="825,525" size="100,100">(set: $doubt to $default_doubt)(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;КОНЕЦ ⟲&quot;,&quot;P24&quot;)]</tw-passagedata><tw-passagedata pid="29" name="P24" tags="l1" position="825,525" size="100,100">(set: $doubt to $default_doubt)(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$dad_color)[&#39;&#39;Отец&#39;&#39;] явно нервничает. Неужто знает про клад? Если он сильно засомневается, то жди беды.
 
@@ -427,26 +428,26 @@ test
 (text-colour:$dad_color)[— А ты как будто не знаешь?]
 ---
 (link: &quot;Дразнить.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Недоумевать.&quot;)[(set: $doubt = (max: 0, it - 1))(go-to:&quot;P25&quot;)]</tw-passagedata><tw-passagedata pid="30" name="P25" tags="l1" position="825,650" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Недоумевать.&quot;)[(set: $doubt = (max: 0, it - 1))(go-to:&quot;P25&quot;)]</tw-passagedata><tw-passagedata pid="30" name="P25" tags="l1" position="825,650" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— О чем ты? Совершенно скучный день.]
 (text-colour:$dad_color)[— Скучный говоришь? Что сегодня делал?]
 ---
 (link: &quot;Соврать.&quot;)[ Упс! Еще не готово.]
 (link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="31" name="Sound test 1" tags="" position="200,875" size="100,100">[[Click -&gt; Sound Test 2]]</tw-passagedata><tw-passagedata pid="32" name=" Sound Test 2" tags="" position="200,1000" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg.mp3&#39;);&quot; /&gt;&lt;/div&gt;}
-[[Click -&gt; Sound Test 3]]</tw-passagedata><tw-passagedata pid="33" name=" Sound Test 3" tags="" position="200,1125" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg2.mp3&#39;, 1);&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 4]]</tw-passagedata><tw-passagedata pid="34" name=" Sound Test 4" tags="" position="200,1250" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 5]]</tw-passagedata><tw-passagedata pid="35" name=" Sound Test 5" tags="" position="200,1375" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop(1);&quot; /&gt;&lt;/div&gt;}</tw-passagedata><tw-passagedata pid="36" name="P26" tags="l1" position="825,775" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+[[Click -&gt; Sound Test 3]]</tw-passagedata><tw-passagedata pid="33" name=" Sound Test 3" tags="" position="200,1125" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg2.mp3&#39;, 1);&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 4]]</tw-passagedata><tw-passagedata pid="34" name=" Sound Test 4" tags="" position="200,1250" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 5]]</tw-passagedata><tw-passagedata pid="35" name=" Sound Test 5" tags="" position="200,1375" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop(1);&quot; /&gt;&lt;/div&gt;}</tw-passagedata><tw-passagedata pid="36" name="P26" tags="l1" position="825,775" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— По правде говоря, сегодня хоронил своего питомца. Его какой-то охотник подстрелил.]
 (text-colour:$dad_color)[— А ты говоришь «скучный день»! Может еще что интересного было?]
 ---
 (link: &quot;Соврать.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 2))(go-to:&quot;P27&quot;)]</tw-passagedata><tw-passagedata pid="37" name="P27" tags="l1" position="825,900" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 2))(go-to:&quot;P27&quot;)]</tw-passagedata><tw-passagedata pid="37" name="P27" tags="l1" position="825,900" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Нашел коробку, пока землю рыл. Отличный гробик вышел. $pet доволен остался.]
 (text-colour:$dad_color)[— Коробка говоришь? И что с ней?]
 ---
 (link: &quot;Соврать.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P28&quot;)]</tw-passagedata><tw-passagedata pid="38" name="P28" tags="l1" position="825,1025" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P28&quot;)]</tw-passagedata><tw-passagedata pid="38" name="P28" tags="l1" position="825,1025" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Да коробка как коробка, открыл, питомца положил, да закопал. Видать, давно там лежала. Никому не нужная.]
 (text-colour:$dad_color)[— Знаешь, всегда меня злил твой «$pet». Такая же грязная крыса как и ты.]
@@ -454,19 +455,19 @@ test
 (text-colour:$dad_color)[— Этим я убил его, убью и тебя! Где деньги, придурок?!]
 ---
 (link: &quot;Угроза.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Испуг.&quot;)[(set: $doubt = (max: 0, it - 2))(go-to:&quot;P29&quot;)]</tw-passagedata><tw-passagedata pid="39" name="P29" tags="l1" position="825,1150" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Испуг.&quot;)[(set: $doubt = (max: 0, it - 2))(go-to:&quot;P29&quot;)]</tw-passagedata><tw-passagedata pid="39" name="P29" tags="l1" position="825,1150" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Ч-ч-что? Деньги? Я ничего не трогал, я исправлюсь!]
 (text-colour:$dad_color)[— Исправишься, значит. Ты хоть за что извиняешься?]
 ---
 (link: &quot;Валять дурака.&quot;)[(set: $doubt = (max: 0, it - 1))(go-to:&quot;P30&quot;)]
-(link: &quot;Напасть.&quot;)[(go-to:&quot;P30.1&quot;)]</tw-passagedata><tw-passagedata pid="40" name="P30" tags="l1" position="825,1275" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Напасть.&quot;)[(go-to:&quot;P30.1&quot;)]</tw-passagedata><tw-passagedata pid="40" name="P30" tags="l1" position="825,1275" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Не знаю… А что такое деньги? Еда какая-то?]
 (text-colour:$dad_color)[—Ох, дурак ты. Толку от тебя как от козла молока. Сиди дома и не высовывайся. Пока.]
 Отец вышел из лачуги, плюнул с досады на землю и пошел домой.
 ---
-[[Расслабиться.-&gt;P40]]</tw-passagedata><tw-passagedata pid="41" name="P30.1" tags="l1" position="675,1275" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P30&quot;)]Сомнение: |doubt&gt;[$doubt] из $max_doubt.
+[[Расслабиться.-&gt;P40]]</tw-passagedata><tw-passagedata pid="41" name="P30.1" tags="l1" position="675,1275" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P30&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 Я внезапно напрыгнул на отца. Если успею выхватить пистолет, то убить его и сбежать не составит труда.
 
