@@ -262,6 +262,8 @@ if (typeof Sound == "undefined") {
 (set: $new_mom_color to #dd3333)
 (set: $rose_color to #ff3399)
 (set: $rose_color_angry to #ff0000)
+(set: $obedient_color to #009933)
+(set: $not_obedient_color to #ff0000)
 (set: $place to 0)
 (set: $obedient to true)
 (set: $obedient_string to &quot;Послушный&quot;)
@@ -714,7 +716,7 @@ test
 (color:$mom_color)[— $name, золотце. Иди к себе, поиграй. Мы с доктором поговорим пока.]
 ---
 [[Сопротивляться.-&gt;P0.8]]
-[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="89" name="P0.7" tags="l11" position="425,1100" size="100,100">//(set:$obedient to true)(color:$hero_color)[Я] теперь (text-colour:green)[$obedient_string].//
+[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="89" name="P0.7" tags="l11" position="425,1100" size="100,100">//(set:$obedient to true)(color:$hero_color)[Я] теперь (text-colour:$obedient_color)[$obedient_string].//
 
 Всегда делаю как скажут. (color:$hero_color)[Я] вышел и закрыл за собой дверь. Почему в этот раз (color:$hero_color)[мне] не разрешили остаться?
 ---
@@ -723,7 +725,7 @@ test
 (color:$mom_color)[— Я позову тебя как мы закончим.]
 ---
 [[Сопротивляться.-&gt;P0.9]]
-[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="91" name="P0.9" tags="l11" position="575,1250" size="100,100">(set:$obedient to false)//(color:$hero_color)[Я] теперь (text-colour:red)[$not_obedient_string].//
+[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="91" name="P0.9" tags="l11" position="575,1250" size="100,100">(set:$obedient to false)//(color:$hero_color)[Я] теперь (text-colour:$not_obedient_color)[$not_obedient_string].//
 
 (color:$hero_color)[— Нет-нет-нет! Говорите при мне!]
 Доктор не стал дальше слушать. Взял подмышку и вытолкнул за дверь. Чего они там секретничают?
@@ -768,9 +770,9 @@ test
 ---
 [[Проводить.-&gt;P0.18]]</tw-passagedata><tw-passagedata pid="100" name="P0.18" tags="l11" position="500,2600" size="100,100">— Ох… $name, иди к себе в комнату. Я тебя потом позову.
 ---
-(if:$obedient is true)[(text-colour:green)[[[(Послушный) Иди в комнату.-&gt;P0.19]]]
-~~(text-colour:red)[(Капризный) Сопротивляться.]~~](else:)[~~(text-colour:green)[(Послушный) Иди в комнату]~~
-(text-colour:red)[[[(Капризный) Сопротивляться.-&gt;P0.20]]]]</tw-passagedata><tw-passagedata pid="101" name="P0.19" tags="l12" position="425,2750" size="100,100">(color:$hero_color)[Я] пошел к себе в комнату. В доме много людей. Они о чем-то напряженное говорят. (color:$hero_color)[Мне] остаётся только ждать, пока ко (color:$hero_color)[мне] не придут.
+(if:$obedient is true)[(text-colour:$obedient_color)[[[(Послушный) Иди в комнату.-&gt;P0.19]]]
+~~(text-colour:$not_obedient_color)[(Капризный) Сопротивляться.]~~](else:)[~~(text-colour:$obedient_color)[(Послушный) Иди в комнату]~~
+(text-colour:$not_obedient_color)[[[(Капризный) Сопротивляться.-&gt;P0.20]]]]</tw-passagedata><tw-passagedata pid="101" name="P0.19" tags="l12" position="425,2750" size="100,100">(color:$hero_color)[Я] пошел к себе в комнату. В доме много людей. Они о чем-то напряженное говорят. (color:$hero_color)[Мне] остаётся только ждать, пока ко (color:$hero_color)[мне] не придут.
 ---
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Ждать.-&gt;P0.23]]</tw-passagedata><tw-passagedata pid="102" name="P0.20" tags="l11" position="575,2750" size="100,100">(color:$hero_color)[— Нет, я маму не брошу!]
 Дядя взял (color:$hero_color)[меня] за шкирку, кинул в комнату и запер. Сегодня все такие грубые.
