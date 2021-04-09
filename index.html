@@ -8,7 +8,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Kurnaev_Diploma_nd5.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Kurnaev_Diploma_nd5" startnode="72" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="0.6" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+<tw-storydata name="Kurnaev_Diploma_nd5" startnode="71" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="0.6" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 tw-include[type="footer"]{
 	visibility: collapse;
@@ -276,6 +276,7 @@ if (typeof Sound == "undefined") {
 &lt;script&gt;Sound.load(&#39;Sound/metal_clank.wav&#39;, 3);&lt;/script&gt;
 &lt;script&gt;Sound.load(&#39;Sound/chest_opening.wav&#39;, 4);&lt;/script&gt;
 &lt;script&gt;Sound.load(&#39;Sound/coins.wav&#39;, 5);&lt;/script&gt;
+&lt;script&gt;Sound.load(&#39;Sound/door_squeak.wav&#39;, 6);&lt;/script&gt;
 &lt;script&gt;Preload.loadImgAsync(&#39;Images/paper.jpg&#39;);&lt;/script&gt;
 &lt;script&gt;Preload.loadImgAsync(&#39;Images/backyard.jpg&#39;);&lt;/script&gt;
 &lt;script&gt;Preload.loadImgAsync(&#39;Images/backyard-night.jpg&#39;);&lt;/script&gt;
@@ -286,10 +287,15 @@ if (typeof Sound == "undefined") {
 &lt;script&gt;Preload.loadImgAsync(&#39;Images/shack.jpg&#39;);&lt;/script&gt;
 &lt;script&gt;Preload.loadImgAsync(&#39;Images/soil.jpg&#39;);&lt;/script&gt;
 &lt;script&gt;Preload.loadImgAsync(&#39;Images/treasure.png&#39;);&lt;/script&gt;
+&lt;script&gt;Preload.loadImgAsync(&#39;Images/inside-caravan.jpg&#39;);&lt;/script&gt;
 (set: $count to 0)
 (set: $only_friend to &quot;мой единственный друг&quot;)
 (set: $only_love to &quot;моя тайная любовь&quot;)
 (set: $closest_human to &quot;самый близкий человек&quot;)
+(set: $hide_0 to &quot;Под половицей&quot;)
+(set: $hide_1 to &quot;В матрасе&quot;)
+(set: $hide_2 to &quot;Во дворе под цветком&quot;)
+(set: $hide to $hide_0)
 (set: $pet to &quot;Шарик&quot;)
 (set: $to_select to &quot;...&quot;)
 (set: $name to &quot;Жора&quot;)
@@ -397,47 +403,43 @@ test
 [[Продолжать искать.-&gt;P3.5]]
 [[Вернуться назад!-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="11" name="P3.5" tags="l2_intro" position="3650,400" size="100,100">(text-colour:$hero_color)[—$pet, дождись меня… Кажется, больше не могу…]
 ---
-(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Держаться до последнего.-&gt;P3.6]]</tw-passagedata><tw-passagedata pid="12" name="P4.1" tags="l5" position="4325,475" size="100,100">(color:$hero_color)[Я] смотрю на палящее солнце. (color:$hero_color)[Мне] много еще хочется сделать. Хочется открыть дневник. Записать, что думаю.
-
-(color:$hero_color)[Я] прожил хорошую жизнь. Теперь я иду навстречу (color:$mom_color)[Маме].
----
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-reveal-goto:&quot;КОНЕЦ ⟲&quot;, &quot;P2.1&quot;)[(set: $been_outside to false)]]</tw-passagedata><tw-passagedata pid="13" name="P4" tags="l3" position="2625,700" size="100,100">Купол изнутри окрашен как небо. |doubt&gt;[]
-[---](link:&quot;Оглянуться по сторонам.&quot;)[(replace: ?doubt)[У самого основания (text-colour:$hero_color)[ты] увидел яму.(click:&quot;яму&quot;)[(replace: ?spot)[[[Рассмотреть яму.-&gt;P5]]]]]]|spot&gt;[]</tw-passagedata><tw-passagedata pid="14" name="P5" tags="l3" position="2775,700" size="100,100">//В яме лежит бездыханная тушка. Мех почернел от запекшейся крови, а снаружи уже кружит стая мух.//
+(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Держаться до последнего.-&gt;P3.6]]</tw-passagedata><tw-passagedata pid="12" name="P4" tags="l3" position="2625,700" size="100,100">Купол изнутри окрашен как небо. |doubt&gt;[]
+[---](link:&quot;Оглянуться по сторонам.&quot;)[(replace: ?doubt)[У самого основания (text-colour:$hero_color)[ты] увидел яму.(click:&quot;яму&quot;)[(replace: ?spot)[[[Рассмотреть яму.-&gt;P5]]]]]]|spot&gt;[]</tw-passagedata><tw-passagedata pid="13" name="P5" tags="l3" position="2775,700" size="100,100">//В яме лежит бездыханная тушка. Мех почернел от запекшейся крови, а снаружи уже кружит стая мух.//
 
 Это же… (color:$pet_color)[$pet]! Что с ним случилось?
 ---
-[[Осмотреть.-&gt;P6]]</tw-passagedata><tw-passagedata pid="15" name="P6" tags="l3" position="2925,700" size="100,100">(text-colour:$hero_color)[Ты] взял тельце. (color:$pet_color)[$pet] совсем иссох и почти ничего не весит. (text-colour:$hero_color)[Ты] вернулся к себе в лачугу.
+[[Осмотреть.-&gt;P6]]</tw-passagedata><tw-passagedata pid="14" name="P6" tags="l3" position="2925,700" size="100,100">(text-colour:$hero_color)[Ты] взял тельце. (color:$pet_color)[$pet] совсем иссох и почти ничего не весит. (text-colour:$hero_color)[Ты] вернулся к себе в лачугу.
 ---
-[[Рассмотреть тельце.-&gt;P7]]</tw-passagedata><tw-passagedata pid="16" name="P7" tags="l6" position="3075,700" size="100,100">Спина вся в земле. Между меха попадаются мухи.
+[[Рассмотреть тельце.-&gt;P7]]</tw-passagedata><tw-passagedata pid="15" name="P7" tags="l6" position="3075,700" size="100,100">Спина вся в земле. Между меха попадаются мухи.
 ---
 [[Осмотреть левый бок.-&gt;P7.1]]
 [[Осмотреть правый бок.-&gt;P7.2]]
-[[Осмотреть живот.-&gt;P7.3]]</tw-passagedata><tw-passagedata pid="17" name="P7.1" tags="l6" position="3225,550" size="100,100">Это точно (color:$pet_color)[$pet]! Вон шрам, который он еще совсем мальцом заработал. Не уследил, а его уже петух клюнул…
+[[Осмотреть живот.-&gt;P7.3]]</tw-passagedata><tw-passagedata pid="16" name="P7.1" tags="l6" position="3225,550" size="100,100">Это точно (color:$pet_color)[$pet]! Вон шрам, который он еще совсем мальцом заработал. Не уследил, а его уже петух клюнул…
 ---
 [[Осмотреть спину.-&gt;P7]]
 [[Осмотреть правый бок.-&gt;P7.2]]
-[[Осмотреть живот.-&gt;P7.3]]</tw-passagedata><tw-passagedata pid="18" name="P7.2" tags="l6" position="3225,850" size="100,100">Еще вчера он мне лапу тянул. Научить его было жуть как долго. Каждый раз радовался, если (color:$pet_color)[$pet] слушался…
+[[Осмотреть живот.-&gt;P7.3]]</tw-passagedata><tw-passagedata pid="17" name="P7.2" tags="l6" position="3225,850" size="100,100">Еще вчера он мне лапу тянул. Научить его было жуть как долго. Каждый раз радовался, если (color:$pet_color)[$pet] слушался…
 ---
 [[Осмотреть спину.-&gt;P7]]
 [[Осмотреть левый бок.-&gt;P7.1]]
-[[Осмотреть живот.-&gt;P7.3]]</tw-passagedata><tw-passagedata pid="19" name="P7.3" tags="l6" position="3400,700" size="100,100">(color:$pet_color)[$pet] живот только своим показывает. Тут какая-то странная рана…
+[[Осмотреть живот.-&gt;P7.3]]</tw-passagedata><tw-passagedata pid="18" name="P7.3" tags="l6" position="3400,700" size="100,100">(color:$pet_color)[$pet] живот только своим показывает. Тут какая-то странная рана…
 ---
 [[Осмотреть спину.-&gt;P7]]
 [[Осмотреть левый бок.-&gt;P7.1]]
 [[Осмотреть правый бок.-&gt;P7.2]](click:&quot;странная рана&quot;)[
-[[Осмотреть рану.-&gt;P8]]]</tw-passagedata><tw-passagedata pid="20" name="P8" tags="l6" position="3575,700" size="100,100">Глубокая тонкая рана. $pet истек кровью до смерти.
+[[Осмотреть рану.-&gt;P8]]]</tw-passagedata><tw-passagedata pid="19" name="P8" tags="l6" position="3575,700" size="100,100">Глубокая тонкая рана. $pet истек кровью до смерти.
 
 Он достоин славной могилки…
 ---
-[[Похоронить верного друга.-&gt;P9]]</tw-passagedata><tw-passagedata pid="21" name="P9" tags="l1" position="2875,1150" size="100,100">(text-colour:$hero_color)[Ты] быстро сбегал за лопатой и мешком. За домом есть отличное место.
+[[Похоронить верного друга.-&gt;P9]]</tw-passagedata><tw-passagedata pid="20" name="P9" tags="l1" position="2875,1150" size="100,100">(text-colour:$hero_color)[Ты] быстро сбегал за лопатой и мешком. За домом есть отличное место.
 ---
-[[Копать могилу.-&gt;P10]]</tw-passagedata><tw-passagedata pid="22" name="P10" tags="l1" position="2725,1150" size="100,100">(set: $counter to 0)Где копать?
+[[Копать могилу.-&gt;P10]]</tw-passagedata><tw-passagedata pid="21" name="P10" tags="l1" position="2725,1150" size="100,100">(set: $counter to 0)Где копать?
 
 (link: &quot;Прям у дома.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[Самое то для ямы.]}(set: $counter to it + 1)(set: $place to 0)]
 (link: &quot;Ближе к куполу.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[Самое то для ямы.]}(set: $counter to it + 1)(set: $place to 1)]
 (link: &quot;Посредине.&quot;)[ {(if: $counter is 0)[Земля здесь рыхлая, да подтекает. Могилка не удержится.](else-if: $counter is 1)[Ох, ну и жесткая. Лопата вообще не берет.](else:)[Самое то для ямы.]}(set: $counter to it + 1)(set: $place to 2)](event:when $counter is 3)[
 ---
-[[Копать.-&gt;P11]]]</tw-passagedata><tw-passagedata pid="23" name="P11" tags="l7" position="2575,1150" size="100,100">{&lt;script&gt;Sound.play(2);&lt;/script&gt;}(link-reveal: &quot;Копать…&quot;)[ 
+[[Копать.-&gt;P11]]]</tw-passagedata><tw-passagedata pid="22" name="P11" tags="l7" position="2575,1150" size="100,100">{&lt;script&gt;Sound.play(2);&lt;/script&gt;}(link-reveal: &quot;Копать…&quot;)[ 
 
 
 
@@ -506,15 +508,15 @@ test
 
 (link-reveal: &quot;Копать…&quot;)[{&lt;script&gt;Sound.stop(2);Sound.play_once(3);&lt;/script&gt;} ДЗЫНЬ!]]]]]]](click:&quot;ДЗЫНЬ!&quot;)[
 ---
-[[Осмотреть яму.-&gt;P12]]]</tw-passagedata><tw-passagedata pid="24" name="P12" tags="l7" position="2425,1150" size="100,100">Опа… Лопата уперлась во что-то твердое. Что же это может быть?
+[[Осмотреть яму.-&gt;P12]]]</tw-passagedata><tw-passagedata pid="23" name="P12" tags="l7" position="2425,1150" size="100,100">Опа… Лопата уперлась во что-то твердое. Что же это может быть?
 ---
-[[Посмотреть ближе.-&gt;P13]]</tw-passagedata><tw-passagedata pid="25" name="P38" tags="l1" position="200,1050" size="100,100">$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+[[Посмотреть ближе.-&gt;P13]]</tw-passagedata><tw-passagedata pid="24" name="P38" tags="l1" position="200,1050" size="100,100">$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$dad_color)[— Я услышал достаточно. Я относился к тебе хорошо, слишком хорошо.] — Отец достаёт лазер из-за пазухи. — (text-colour:$dad_color)[Ты не заслуживаешь жить, падла!]
 ---
-(text-colour:$dad_color)[[— Сейчас ты отправишься к своей шавке в-&gt;P35.1]] (text-colour:$dad_color)+(text-style:&quot;rumble&quot;)[&#39;&#39;АД!&#39;&#39;]</tw-passagedata><tw-passagedata pid="26" name="P35.1" tags="l13" position="200,1200" size="100,100">(text-colour:$dad_color)[Новый Отец] в приступе ярости продолжает (text-colour:$hero_color)[тебя] душить. (text-colour:$hero_color)[Ты] уже перестал брыкаться. Когда (text-colour:$dad_color)[Новый Отец] поймет, что убил тебя будет уже поздно.
+(text-colour:$dad_color)[[— Сейчас ты отправишься к своей шавке в-&gt;P35.1]] (text-colour:$dad_color)+(text-style:&quot;rumble&quot;)[&#39;&#39;АД!&#39;&#39;]</tw-passagedata><tw-passagedata pid="25" name="P35.1" tags="l13" position="200,1200" size="100,100">(text-colour:$dad_color)[Новый Отец] в приступе ярости продолжает (text-colour:$hero_color)[тебя] душить. (text-colour:$hero_color)[Ты] уже перестал брыкаться. Когда (text-colour:$dad_color)[Новый Отец] поймет, что убил тебя будет уже поздно.
 ---
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;КОНЕЦ ⟲&quot;,&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="27" name="P24" tags="l1" position="525,900" size="100,100">(set: $doubt to $default_doubt)(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;КОНЕЦ ⟲&quot;,&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="26" name="P24" tags="l1" position="525,900" size="100,100">(set: $doubt to $default_doubt)(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$dad_color)[&#39;&#39;Отец&#39;&#39;] явно нервничает. Неужто знает про клад? Если он сильно засомневается, то жди беды.
 
@@ -522,26 +524,26 @@ test
 (text-colour:$dad_color)[— А ты как будто не знаешь?]
 ---
 (link: &quot;Дразнить.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Недоумевать.&quot;)[(set: $doubt = (max: 0, it - 1))(go-to:&quot;P25&quot;)]</tw-passagedata><tw-passagedata pid="28" name="P25" tags="l1" position="525,1025" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Недоумевать.&quot;)[(set: $doubt = (max: 0, it - 1))(go-to:&quot;P25&quot;)]</tw-passagedata><tw-passagedata pid="27" name="P25" tags="l1" position="525,1025" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— О чем ты? Совершенно скучный день.]
 (text-colour:$dad_color)[— Скучный говоришь? Что сегодня делал?]
 ---
 (link: &quot;Соврать.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="29" name="Sound test 1" tags="" position="25,800" size="100,100">[[Click -&gt; Sound Test 2]]</tw-passagedata><tw-passagedata pid="30" name=" Sound Test 2" tags="" position="25,925" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg.mp3&#39;);&quot; /&gt;&lt;/div&gt;}
-[[Click -&gt; Sound Test 3]]</tw-passagedata><tw-passagedata pid="31" name=" Sound Test 3" tags="" position="25,1050" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg2.mp3&#39;, 1);&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 4]]</tw-passagedata><tw-passagedata pid="32" name=" Sound Test 4" tags="" position="25,1175" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 5]]</tw-passagedata><tw-passagedata pid="33" name=" Sound Test 5" tags="" position="25,1300" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop(1);&quot; /&gt;&lt;/div&gt;}</tw-passagedata><tw-passagedata pid="34" name="P26" tags="l1" position="525,1150" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P26&quot;)]</tw-passagedata><tw-passagedata pid="28" name="Sound test 1" tags="" position="25,800" size="100,100">[[Click -&gt; Sound Test 2]]</tw-passagedata><tw-passagedata pid="29" name=" Sound Test 2" tags="" position="25,925" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg.mp3&#39;);&quot; /&gt;&lt;/div&gt;}
+[[Click -&gt; Sound Test 3]]</tw-passagedata><tw-passagedata pid="30" name=" Sound Test 3" tags="" position="25,1050" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.play(&#39;Sound/bg2.mp3&#39;, 1);&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 4]]</tw-passagedata><tw-passagedata pid="31" name=" Sound Test 4" tags="" position="25,1175" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop();&quot; /&gt;&lt;/div&gt;}[[Click -&gt; Sound Test 5]]</tw-passagedata><tw-passagedata pid="32" name=" Sound Test 5" tags="" position="25,1300" size="100,100">{&lt;div style=&quot;display: none;&quot;&gt;&lt;img src=&quot;!@#$&quot; onerror=&quot;Sound.stop(1);&quot; /&gt;&lt;/div&gt;}</tw-passagedata><tw-passagedata pid="33" name="P26" tags="l1" position="525,1150" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— По правде говоря, сегодня хоронил своего питомца. Его какой-то охотник подстрелил.]
 (text-colour:$dad_color)[— А ты говоришь «скучный день»! Может еще что интересного было?]
 ---
 (link: &quot;Соврать.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 2))(go-to:&quot;P27&quot;)]</tw-passagedata><tw-passagedata pid="35" name="P27" tags="l1" position="525,1275" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 2))(go-to:&quot;P27&quot;)]</tw-passagedata><tw-passagedata pid="34" name="P27" tags="l1" position="525,1275" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Нашел коробку, пока землю рыл. Отличный гробик вышел. $pet доволен остался.]
 (text-colour:$dad_color)[— Коробка говоришь? И что с ней?]
 ---
 (link: &quot;Соврать.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P28&quot;)]</tw-passagedata><tw-passagedata pid="36" name="P28" tags="l1" position="525,1400" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Сказать правду.&quot;)[(set: $doubt = (min: $max_doubt, it + 1))(go-to:&quot;P28&quot;)]</tw-passagedata><tw-passagedata pid="35" name="P28" tags="l1" position="525,1400" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Да коробка как коробка, открыл, питомца положил, да закопал. Видать, давно там лежала. Никому не нужная.]
 (text-colour:$dad_color)[— Знаешь, всегда меня злил твой «$pet». Такая же грязная крыса как и ты.]
@@ -549,19 +551,19 @@ test
 (text-colour:$dad_color)[— Этим я убил его, убью и тебя! Где деньги, придурок?!]
 ---
 (link: &quot;Угроза.&quot;)[ Упс! Еще не готово.]
-(link: &quot;Испуг.&quot;)[(set: $doubt = (max: 0, it - 2))(go-to:&quot;P29&quot;)]</tw-passagedata><tw-passagedata pid="37" name="P29" tags="l1" position="525,1525" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Испуг.&quot;)[(set: $doubt = (max: 0, it - 2))(go-to:&quot;P29&quot;)]</tw-passagedata><tw-passagedata pid="36" name="P29" tags="l1" position="525,1525" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Ч-ч-что? Деньги? Я ничего не трогал, я исправлюсь!]
 (text-colour:$dad_color)[— Исправишься, значит. Ты хоть за что извиняешься?]
 ---
 (link: &quot;Валять дурака.&quot;)[(set: $doubt = (max: 0, it - 1))(go-to:&quot;P30&quot;)]
-(link: &quot;Напасть.&quot;)[(go-to:&quot;P30.1&quot;)]</tw-passagedata><tw-passagedata pid="38" name="P30" tags="l1" position="525,1650" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+(link: &quot;Напасть.&quot;)[(go-to:&quot;P30.1&quot;)]</tw-passagedata><tw-passagedata pid="37" name="P30" tags="l1" position="525,1650" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P38&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 (text-colour:$hero_color)[— Не знаю… А что такое деньги? Еда какая-то?]
 (text-colour:$dad_color)[—Ох, дурак ты. Толку от тебя как от козла молока. Сиди дома и не высовывайся. Пока.]
 Отец вышел из лачуги, плюнул с досады на землю и пошел домой.
 ---
-[[Расслабиться.-&gt;P40]]</tw-passagedata><tw-passagedata pid="39" name="P30.1" tags="l1" position="375,1650" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P30&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
+[[Расслабиться.-&gt;P40]]</tw-passagedata><tw-passagedata pid="38" name="P30.1" tags="l1" position="375,1650" size="100,100">(if:$doubt &gt;= $max_doubt)[(goto:&quot;P30&quot;)]$doubt_text: |doubt&gt;[$doubt] из $max_doubt.
 ---
 Я внезапно напрыгнул на отца. Если успею выхватить пистолет, то убить его и сбежать не составит труда.
 
@@ -569,105 +571,108 @@ test
 
 (text-colour:$dad_color)[— Вот так ты за заботу платишь, значит?]
 
-(link: &quot;Слушать отца.&quot;)[(set: $doubt = (min: $max_doubt, it + 5))(go-to:&quot;P38&quot;)]</tw-passagedata><tw-passagedata pid="40" name="P40" tags="l1" position="525,1800" size="100,100">Откуда эти деньги и зачем так срочно нужны? Любопытство всё равно не даст мне покоя.
+(link: &quot;Слушать отца.&quot;)[(set: $doubt = (min: $max_doubt, it + 5))(go-to:&quot;P38&quot;)]</tw-passagedata><tw-passagedata pid="39" name="P40" tags="l1" position="525,1800" size="100,100">Откуда эти деньги и зачем так срочно нужны? Любопытство всё равно не даст мне покоя.
 ---
-[[Следовать за ним-&gt;P41]]</tw-passagedata><tw-passagedata pid="41" name="P13" tags="l8" position="2275,1150" size="100,100">Странная коробка. (text-colour:$hero_color)[Ты] никогда раньше таких не видел.
+[[Следовать за ним-&gt;P41]]</tw-passagedata><tw-passagedata pid="40" name="P13" tags="l8" position="2275,1150" size="100,100">Странная коробка. (text-colour:$hero_color)[Ты] никогда раньше таких не видел.
 ---
-(link-reveal-goto:&quot;Заглянуть внутрь.&quot;,&quot;P14&quot;)[&lt;script&gt;Sound.play_once(4);&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="42" name="P14" tags="l8" position="2125,1150" size="100,100">Внутри большой мешок с какой-то жестью.
+(link-reveal-goto:&quot;Заглянуть внутрь.&quot;,&quot;P14&quot;)[&lt;script&gt;Sound.play_once(4);&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="41" name="P14" tags="l8" position="2125,1150" size="100,100">Внутри большой мешок с какой-то жестью.
 ---
-[[Рассмотреть поближе.-&gt;P15]]</tw-passagedata><tw-passagedata pid="43" name="P15" tags="l8" position="1975,1150" size="100,100">(text-colour:$hero_color)[Ты] видел такие штуки раньше… (text-colour:$mom_color)[Мама] давала врачам. Это… деньги. А значит (text-colour:$hero_color)[ты] нашёл… клад!
+[[Рассмотреть поближе.-&gt;P15]]</tw-passagedata><tw-passagedata pid="42" name="P15" tags="l8" position="1975,1150" size="100,100">(text-colour:$hero_color)[Ты] видел такие штуки раньше… (text-colour:$mom_color)[Мама] давала врачам. Это… деньги. А значит (text-colour:$hero_color)[ты] нашёл… клад!
 ---
-[[Клад?-&gt;P16]]</tw-passagedata><tw-passagedata pid="44" name="P16" tags="l8" position="1825,1150" size="100,100">Откуда тут клад? Зарыли пираты давным-давно! Как в книжках.
+[[Клад?-&gt;P16]]</tw-passagedata><tw-passagedata pid="43" name="P16" tags="l8" position="1825,1150" size="100,100">Откуда тут клад? Зарыли пираты давным-давно! Как в книжках.
 ---
-(link-reveal-goto:&quot;Пересыпать деньги в мешок.&quot;,&quot;P17&quot;)[&lt;script&gt;Sound.play_once(5);&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="45" name="P17" tags="l8" position="1675,1150" size="100,100">А из этой коробки выйдет отличный гроб. (color:$pet_color)[$pet], заждался уже?
+(link-reveal-goto:&quot;Пересыпать деньги в мешок.&quot;,&quot;P17&quot;)[&lt;script&gt;Sound.play_once(5);&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="44" name="P17" tags="l8" position="1675,1150" size="100,100">А из этой коробки выйдет отличный гроб. (color:$pet_color)[$pet], заждался уже?
 ---
-(link-reveal-goto:&quot;Взять питомца в руки.&quot;,&quot;P18&quot;)[&lt;script&gt;Sound.stop(5);&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="46" name="P18" tags="l7" position="1525,1150" size="100,100">Прощай, друг. Он был тебе как родной. (text-colour:$hero_color)[Ты] никогда его не забудешь!
----
-[[Опустить в яму.-&gt;P19]]
-[[Молча подержать.-&gt;P18.1]]</tw-passagedata><tw-passagedata pid="47" name="P19" tags="l7" position="1375,1150" size="100,100">Ну вот и всё. (text-colour:$hero_color)[Ты] еще не раз сюда придешь. Прощай, $pet.
----
-[[Пойти домой с деньгами.-&gt;P20]]</tw-passagedata><tw-passagedata pid="48" name="P18.1" tags="l7" position="1450,1000" size="100,100">...
+(link-reveal-goto:&quot;Взять питомца в руки.&quot;,&quot;P18&quot;)[&lt;script&gt;Sound.stop(5);&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="45" name="P18" tags="l7" position="1525,1150" size="100,100">Прощай, друг. Он был тебе как родной. (text-colour:$hero_color)[Ты] никогда его не забудешь!
 ---
 [[Опустить в яму.-&gt;P19]]
-[[Молча подержать.-&gt;P18.1]]</tw-passagedata><tw-passagedata pid="49" name="P20" tags="l1" position="1225,1150" size="100,100">Это ж какие здесь деньжища. Можно купить еще один паёк…
-… (link-reveal: &quot;или еще один паёк всем в деревне…&quot;)[=
-… (link-reveal: &quot;или купить ВСЮ деревню…&quot;)[=
-… (link-reveal: &quot;или выбраться из деревни!&quot;)[=
+[[Молча подержать.-&gt;P18.1]]</tw-passagedata><tw-passagedata pid="46" name="P19" tags="l7" position="1375,1150" size="100,100">Ну вот и всё. (text-colour:$hero_color)[Ты] еще не раз сюда придешь. Прощай, $pet.
 ---
-[[Выбраться?-&gt;P21]]</tw-passagedata><tw-passagedata pid="50" name="P21" tags="l1" position="1075,1150" size="100,100">Одна мысль, что (text-colour:$hero_color)[ты] покинешь деревню, накрыла (text-colour:$hero_color)[тебя] волной счастья. Но почему? (text-colour:$hero_color)[Тебе], вроде, и тут непло… &#39;&#39;Что-то мелькнуло за окном!&#39;&#39;
+[[Пойти домой с деньгами.-&gt;P20]]</tw-passagedata><tw-passagedata pid="47" name="P18.1" tags="l7" position="1450,1000" size="100,100">...
 ---
-[[Посмотреть!-&gt;P22]]</tw-passagedata><tw-passagedata pid="51" name="P22" tags="l1" position="925,1150" size="100,100">(text-colour:$hero_color)[Ты] заметил силуэт (text-colour:$dad_color)[Нового Отца]. Даже здесь (text-colour:$hero_color)[ты] почувствовал плотный запах сигарет. Что ему здесь нужно?
+[[Опустить в яму.-&gt;P19]]
+[[Молча подержать.-&gt;P18.1]]</tw-passagedata><tw-passagedata pid="48" name="P20" tags="l1" position="1225,1150" size="100,100">Первым делом нужно куда-то деть деньги. Где их спрятать?
+---
+(link-reveal-goto: &quot;$hide_0.&quot;, &quot;P20.1&quot;)[(set: $hide to $hide_0)]
+(link-reveal-goto: &quot;$hide_1.&quot;, &quot;P20.2&quot;)[(set: $hide to $hide_1)]
+(link-reveal-goto: &quot;$hide_2.&quot;, &quot;P20.3&quot;)[(set: $hide to $hide_2)]</tw-passagedata><tw-passagedata pid="49" name="P21" tags="l1" position="1075,1150" size="100,100">Это ж какие здесь деньжища. Как-то раз (text-colour:$new_mom_color)[Новая Мама] дала мне конфету. Ничего вкуснее (text-colour:$hero_color)[ты] в жизни не пробовал. Можешь купить себе конфету…(click:&quot;конфету&quot;)[
+(link-reveal:&quot;…или горсть конфет…&quot;)[
+(link-reveal:&quot;…или целую фабрику…&quot;)[
+(link-reveal:&quot;…или…&quot;)[&lt;script&gt;Sound.play_once(6);&lt;/script&gt; (link-reveal:&quot;Скрип!&quot;)[
+(link-reveal:&quot;Кто-то скрипнул калиткой!&quot;)[
+---
+[[Оглянуться по сторонам.-&gt;P22]]]]]]]]</tw-passagedata><tw-passagedata pid="50" name="P22" tags="l1" position="925,1150" size="100,100">(text-colour:$hero_color)[Ты] заметил (text-colour:$dad_color)[Нового Отца]. Издалека (text-colour:$hero_color)[ты] почувствовал плотный запах сигарет. Что ему здесь нужно?
 ---
 [[Подойти и открыть дверь.-&gt;P23]]
-[[Затаится и ждать.-&gt;P23.1]]</tw-passagedata><tw-passagedata pid="52" name="P23" tags="l1" position="850,1000" size="100,100">(text-colour:$hero_color)[Я] открыл дверь и поприветствовал (text-colour:$dad_color)[Отца]. От неожиданности он слегка вздрогнул.
-
-(text-colour:$hero_color)[— Здравствуй, Отец, не часто тебя здесь увидишь.]
-(text-colour:$dad_color)[— Ты чего подкрадываешься? И не называй меня отцом. Для тебя я — Алексей Петрович. Ладно, не за этим я сюда пришел.]
+[[Затаится и ждать.-&gt;P23.1]]</tw-passagedata><tw-passagedata pid="51" name="P23" tags="l1" position="850,1000" size="100,100">(text-colour:$hero_color)[Ты] открыл дверь и поприветствовал Отца.
+(text-colour:$hero_color)[— Здрасте…]
+От неожиданности он слегка вздрогнул.
+(text-colour:$dad_color)[— Ты чего подкрадываешься? У меня к тебе вопрос есть…]
 ---
-[[Слушать.-&gt;P24]]</tw-passagedata><tw-passagedata pid="53" name="P23.1" tags="l1" position="1000,1000" size="100,100">(text-colour:$dad_color)[Отец] медленно открыл дверь и стал оглядываться по сторонам. Увидев меня, от неожиданности он слегка вздрогнул.
+[[Слушать.-&gt;P24]]</tw-passagedata><tw-passagedata pid="52" name="P23.1" tags="l1" position="1000,1000" size="100,100">(text-colour:$dad_color)[Новый Отец] со скрипом открыл дверь и стал оглядываться по сторонам. Увидев (text-colour:$hero_color)[тебя], он вздрогнул.
 
-(text-colour:$dad_color)[— Ты меня напугал! Почему не пошел меня встретить?]
-(text-colour:$hero_color)[— Я не заметил тебя, Отец.]
-(text-colour:$dad_color)[— Что-то ты стал невнимательным. И не называй меня отцом. Для тебя я — (text-colour:$dad_color)[Алексей Петрович]. Ладно, не за этим я сюда пришел.]
+(text-colour:$dad_color)[— Ох ты ж… Напугал! Чего прячешься?]
+(ГГ)— Я не заметил вас.
+(text-colour:$dad_color)[— Ага, ну-ну… слушай, $name…]
 ---
-[[Слушать.-&gt;P24]]</tw-passagedata><tw-passagedata pid="54" name="P41" tags="l4" position="850,1450" size="100,100">(text-colour:$new_mom_color)[(color:$mom_color)[Мама]] сегодня особенно недовольная. Хотя не то чтобы это редкость.
+[[Слушать.-&gt;P24]]</tw-passagedata><tw-passagedata pid="53" name="P41" tags="l4" position="850,1450" size="100,100">(text-colour:$new_mom_color)[(color:$mom_color)[Мама]] сегодня особенно недовольная. Хотя не то чтобы это редкость.
 (text-colour:$new_mom_color)[— Ну что? Он тебе все рассказал?]
 ---
-[[Слушать дальше.-&gt;P42]]</tw-passagedata><tw-passagedata pid="55" name="P42" tags="l4" position="1000,1450" size="100,100">(text-colour:$dad_color)[— Нет… Либо он ничего не знает, либо хорошо врет.]
+[[Слушать дальше.-&gt;P42]]</tw-passagedata><tw-passagedata pid="54" name="P42" tags="l4" position="1000,1450" size="100,100">(text-colour:$dad_color)[— Нет… Либо он ничего не знает, либо хорошо врет.]
 (text-colour:$new_mom_color)[— Что будем делать с долгом? Эти деньги нам нужны сейчас!]
 ---
-[[Слушать дальше.-&gt;P43]]</tw-passagedata><tw-passagedata pid="56" name="P43" tags="l4" position="1150,1450" size="100,100">(text-colour:$dad_color)[— Родная, я что-нибудь придумаю.]
+[[Слушать дальше.-&gt;P43]]</tw-passagedata><tw-passagedata pid="55" name="P43" tags="l4" position="1150,1450" size="100,100">(text-colour:$dad_color)[— Родная, я что-нибудь придумаю.]
 (color:$new_mom_color)[(color:$mom_color)[Мама]] оглянулась по сторонам.
 (text-colour:$new_mom_color)[— Ты понимаешь, что они в курсе ОТКУДА у нас эти деньги?]
 ---
-[[Слушать дальше.-&gt;P44]]</tw-passagedata><tw-passagedata pid="57" name="P44" tags="l4" position="1300,1450" size="100,100">(text-colour:$dad_color)[— Да, я…]
+[[Слушать дальше.-&gt;P44]]</tw-passagedata><tw-passagedata pid="56" name="P44" tags="l4" position="1300,1450" size="100,100">(text-colour:$dad_color)[— Да, я…]
 (text-colour:$new_mom_color)[— Ты понимаешь, ЧТО они с нами сделают, если ты ничего не придумаешь?]
 (text-colour:$dad_color)[— Конечно, родная…]
 ---
-[[Слушать дальше.-&gt;P45]]</tw-passagedata><tw-passagedata pid="58" name="P45" tags="l4" position="1450,1450" size="100,100">(text-colour:$dad_color)[— Дорогая, успокойся. У меня есть план. 
+[[Слушать дальше.-&gt;P45]]</tw-passagedata><tw-passagedata pid="57" name="P45" tags="l4" position="1450,1450" size="100,100">(text-colour:$dad_color)[— Дорогая, успокойся. У меня есть план. 
 — Через неделю приезжает караван, мы продадим им мальчишку. Он первоклассный материал.]
 ---
-[[Слушать дальше.-&gt;P46]]</tw-passagedata><tw-passagedata pid="59" name="P46" tags="l4" position="1600,1450" size="100,100">Они говорят обо (text-colour:$hero_color)[мне]?!
+[[Слушать дальше.-&gt;P46]]</tw-passagedata><tw-passagedata pid="58" name="P46" tags="l4" position="1600,1450" size="100,100">Они говорят обо (text-colour:$hero_color)[мне]?!
 (text-colour:$new_mom_color)[— Это отличная идея!]
 В разговор внезапно вмешивается (text-colour:$rose_color)[Роза]. До этого она так тихо сидела, что я её и не заметил.
 (text-colour:$rose_color)[— Погодите-ка! Папа, ты обещал его мне!]
 ---
-[[Слушать дальше.-&gt;P47]]</tw-passagedata><tw-passagedata pid="60" name="P47" tags="l4" position="1750,1450" size="100,100">(text-colour:$dad_color)[— Я помню солнышко, но сейчас нет другого выбора.]
+[[Слушать дальше.-&gt;P47]]</tw-passagedata><tw-passagedata pid="59" name="P47" tags="l4" position="1750,1450" size="100,100">(text-colour:$dad_color)[— Я помню солнышко, но сейчас нет другого выбора.]
 (text-colour:$rose_color)[— Зря терпела его выходки, что ли? Папа, придумай что-то другое!]
 ---
-[[Слушать дальше.-&gt;P48]]</tw-passagedata><tw-passagedata pid="61" name="P48" tags="l4" position="1900,1450" size="100,100">(text-colour:$dad_color)[— Золотце, прости. Так нужно.]
+[[Слушать дальше.-&gt;P48]]</tw-passagedata><tw-passagedata pid="60" name="P48" tags="l4" position="1900,1450" size="100,100">(text-colour:$dad_color)[— Золотце, прости. Так нужно.]
 (text-colour:$rose_color_angry)[— ПАПА, ТЫ О-БЕ-ЩАЛ!]
 ---
-[[Слушать дальше.-&gt;P49]]</tw-passagedata><tw-passagedata pid="62" name="P49" tags="l4" position="2050,1450" size="100,100">(text-colour:$dad_color)[— Цветочек, но не серчай.]
+[[Слушать дальше.-&gt;P49]]</tw-passagedata><tw-passagedata pid="61" name="P49" tags="l4" position="2050,1450" size="100,100">(text-colour:$dad_color)[— Цветочек, но не серчай.]
 (text-colour:$rose_color_angry)[— (text-style:&quot;subscript&quot;)[Дурак…]]
 ---
-[[Слушать дальше.-&gt;P50]]</tw-passagedata><tw-passagedata pid="63" name="P50" tags="l4" position="2200,1450" size="100,100">(text-colour:$dad_color)[— Ты что-то сказала?]
+[[Слушать дальше.-&gt;P50]]</tw-passagedata><tw-passagedata pid="62" name="P50" tags="l4" position="2200,1450" size="100,100">(text-colour:$dad_color)[— Ты что-то сказала?]
 (text-colour:$rose_color_angry)[— [ДУРАК-ДУРАК-ДУРАК! Д-У-Р-А-К!!]]
 (text-colour:$dad_color)[— (text-style:&quot;subscript&quot;)[Дорогая, спаси!]]
 ---
-[[Слушать дальше.-&gt;P51]]</tw-passagedata><tw-passagedata pid="64" name="P51" tags="l4" position="2350,1450" size="100,100">(text-colour:$rose_color)[— (text-style:&quot;subscript&quot;)[Но, мам…]]
+[[Слушать дальше.-&gt;P51]]</tw-passagedata><tw-passagedata pid="63" name="P51" tags="l4" position="2350,1450" size="100,100">(text-colour:$rose_color)[— (text-style:&quot;subscript&quot;)[Но, мам…]]
 (text-colour:$new_mom_color)[— Роза, отцу лучше знать. Слушайся его!]
 (text-colour:$rose_color)[— (text-style:&quot;subscript&quot;)[Хорошо, как скажешь…]]
 (text-colour:$new_mom_color)[— Никаких «но»! Делай как я сказала!]
 ---
-[[Слушать дальше.-&gt;P52]]</tw-passagedata><tw-passagedata pid="65" name="P52" tags="l4" position="2500,1450" size="100,100">В доме стоит напряженное молчание. Никто не хочет быть первым и разрушить это хрупкое перемирие.
+[[Слушать дальше.-&gt;P52]]</tw-passagedata><tw-passagedata pid="64" name="P52" tags="l4" position="2500,1450" size="100,100">В доме стоит напряженное молчание. Никто не хочет быть первым и разрушить это хрупкое перемирие.
 ---
 (link-repeat:&quot;Подождать еще.&quot;)[]
-[[Уйти.-&gt;P53]]</tw-passagedata><tw-passagedata pid="66" name="P53" tags="l10" position="2650,1450" size="100,100"> (color: $hero_color)[Я] вернулся в свой старый дом. Здесь (color: $hero_color)[мне] спокойней.
+[[Уйти.-&gt;P53]]</tw-passagedata><tw-passagedata pid="65" name="P53" tags="l10" position="2650,1450" size="100,100"> (color: $hero_color)[Я] вернулся в свой старый дом. Здесь (color: $hero_color)[мне] спокойней.
 ---
-[[Поспать.-&gt;P54]]</tw-passagedata><tw-passagedata pid="67" name="P54" tags="l10" position="2650,1600" size="100,100">Всякие мысли в голову лезут…
+[[Поспать.-&gt;P54]]</tw-passagedata><tw-passagedata pid="66" name="P54" tags="l10" position="2650,1600" size="100,100">Всякие мысли в голову лезут…
 ---
-[[Лечь на правый бок.-&gt;P54.1]]</tw-passagedata><tw-passagedata pid="68" name="P54.1" tags="l10" position="2500,1600" size="100,100">Неудобно чего-то…
+[[Лечь на правый бок.-&gt;P54.1]]</tw-passagedata><tw-passagedata pid="67" name="P54.1" tags="l10" position="2500,1600" size="100,100">Неудобно чего-то…
 ---
-[[Лечь на левый бок.-&gt;P54.2]]</tw-passagedata><tw-passagedata pid="69" name="P54.2" tags="l10" position="2350,1600" size="100,100">Кто-то за окном? Да нет, показалось.
+[[Лечь на левый бок.-&gt;P54.2]]</tw-passagedata><tw-passagedata pid="68" name="P54.2" tags="l10" position="2350,1600" size="100,100">Кто-то за окном? Да нет, показалось.
 ---
-[[Лечь на спину.-&gt;P54.3]]</tw-passagedata><tw-passagedata pid="70" name="P54.3" tags="l10 need_footer" position="2200,1600" size="100,100">Да нет, кто-то точно за окном. И кому это не спится?
+[[Лечь на спину.-&gt;P54.3]]</tw-passagedata><tw-passagedata pid="69" name="P54.3" tags="l10 need_footer" position="2200,1600" size="100,100">Да нет, кто-то точно за окном. И кому это не спится?
 ---
-[[Лечь на живот.-&gt;P55]]</tw-passagedata><tw-passagedata pid="71" name="Ending" tags="" position="800,2100" size="100,100">Дальше Роза случайно погибнет. ГГ напишет последнюю запись в дневнике, больше мы о нём ничего не узнаем.
+[[Лечь на живот.-&gt;P55]]</tw-passagedata><tw-passagedata pid="70" name="Ending" tags="" position="800,2100" size="100,100">Дальше Роза случайно погибнет. ГГ напишет последнюю запись в дневнике, больше мы о нём ничего не узнаем.
 
 Жду обратной связи. Не забывайте сказать что понравилось, перед тем как ругать.
 ---
-(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-reveal:&quot;ЗАНОВО ⟲&quot;)[(restart:)]]</tw-passagedata><tw-passagedata pid="72" name="Intro" tags="intro" position="25,25" size="100,100">Добро пожаловать в игру.
+(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-reveal:&quot;ЗАНОВО ⟲&quot;)[(restart:)]]</tw-passagedata><tw-passagedata pid="71" name="Intro" tags="intro" position="25,25" size="100,100">Добро пожаловать в игру.
 
 Для продолжения нужно нажимать на ссылки, чтобы открывать текст или переходить на новые сцены.(click:&quot;ссылки&quot;)[ Да именно так!]
 
@@ -683,13 +688,13 @@ test
 Вы были (colour: $not_obedient_color)[жестоким].](if:$ending_1 is true)[
 Вы были (colour: $devoted_color)[преданным].]]
 ---
-(align:&quot;=&gt;&lt;=&quot;)[[[Начать-&gt;I-1.0]]]</tw-passagedata><tw-passagedata pid="73" name="I-1.0" tags="l5" position="150,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;}Здравствуй, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[(click:?page)[=зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
+(align:&quot;=&gt;&lt;=&quot;)[[[Начать-&gt;I-1.0]]]</tw-passagedata><tw-passagedata pid="72" name="I-1.0" tags="l5" position="150,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;}Здравствуй, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[(click:?page)[=зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
 
 (color:$hero_color)[Я] родился мутантом. В деревне (color:$hero_color)[меня] сразу невзлюбили и обзывают страшным. (color:$mom_color)[Мама] говорит, что врут. (color:$mom_color)[Мама] (color:$hero_color)[меня] очень любит.](event:when $count &gt; 1)[
 
 Как (color:$hero_color)[меня] родила, (color:$mom_color)[Мама] стала сильно болеть. Почти с постели не подымается. Папа от нас ушел. Потому (color:$hero_color)[Я] сам охочусь.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)(go-to:&quot;I-1.1&quot;)}]
 ---
-(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="74" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Потом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит, что теперь в бокал поместится.(event:when $count &gt; 0)[
+(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="73" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Потом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит, что теперь в бокал поместится.(event:when $count &gt; 0)[
 
 Вокруг деревни купол. Без него все сразу умрут. Снаружи очень жарко и ничего нет. У (color:$hero_color)[меня] кожа толстая, иногда туда выхожу.](event:when $count &gt; 1)[
 
@@ -697,104 +702,104 @@ test
 
 Иногда к нам в деревню приезжает караван. (color:$hero_color)[Я] разговариваю с охранниками. Они тоже мутанты. Когда (color:$hero_color)[Я] вырасту, тоже стану охранником. Буду большим и сильным.]
 ---
-|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="75" name="P2.1" tags="l15" position="300,525" size="100,100">(text-colour:$hero_color)[Ты] вышел на улицу. Первым делом подошел к выходу из купола. У дома родителей (text-colour:$hero_color)[тебе] попалась (text-colour:$rose_color)[Роза].
+|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="74" name="P2.1" tags="l15" position="300,525" size="100,100">(text-colour:$hero_color)[Ты] вышел на улицу. Первым делом подошел к выходу из купола. У дома родителей (text-colour:$hero_color)[тебе] попалась (text-colour:$rose_color)[Роза].
 (text-colour:$rose_color)[— Привет, $name! Что делаешь?]
 ---
 [[Ответить.-&gt;P2.1.1]]
-(Капризный)[[Некогда болтать.-&gt;P2.1.2]]</tw-passagedata><tw-passagedata pid="76" name="P2.2" tags="l3" position="950,525" size="100,100">Будешь искать снаружи. (text-colour:$hero_color)[Тебя] (text-colour:$mom_color)[Мама] не пускала… Боялась, что сгоришь. Но (text-colour:$pet_color)[$pet] до вечера не дотянет.
+(Капризный)[[Некогда болтать.-&gt;P2.1.2]]</tw-passagedata><tw-passagedata pid="75" name="P2.2" tags="l3" position="950,525" size="100,100">Будешь искать снаружи. (text-colour:$hero_color)[Тебя] (text-colour:$mom_color)[Мама] не пускала… Боялась, что сгоришь. Но (text-colour:$pet_color)[$pet] до вечера не дотянет.
 ---
-[[Идти к выходу!-&gt;P2.2.1]]</tw-passagedata><tw-passagedata pid="77" name="P3.1.1" tags="l2_intro" position="2625,525" size="100,100">(text-style:&quot;fidget&quot;)+(text-colour: #555)[Солнце в самом зените. Тяжело смотреть вперед. (text-colour:$hero_color)[Ты] идешь уткнувшись в песок под собой.]
+[[Идти к выходу!-&gt;P2.2.1]]</tw-passagedata><tw-passagedata pid="76" name="P3.1.1" tags="l2_intro" position="2625,525" size="100,100">(text-style:&quot;fidget&quot;)+(text-colour: #555)[Солнце в самом зените. Тяжело смотреть вперед. (text-colour:$hero_color)[Ты] идешь уткнувшись в песок под собой.]
 ---
 [[Искать.-&gt;P3.1.2]]
-[[Вернуться назад.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="78" name="P3.1.2" tags="l2_intro" position="2775,525" size="100,100">(text-style:&quot;fidget&quot;)+(text-colour: #aaa)[Солнце в самом зените.]
+[[Вернуться назад.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="77" name="P3.1.2" tags="l2_intro" position="2775,525" size="100,100">(text-style:&quot;fidget&quot;)+(text-colour: #aaa)[Солнце в самом зените.]
 ---
 [[Искать.-&gt;P3.1.3]]
-[[Вернуться назад.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="79" name="P3.1.3" tags="l2_intro" position="2925,525" size="100,100">(text-style:&quot;fidget&quot;)+(text-colour: #ddd)[Поднялся ветер, в воздухе теперь туча песка. След теперь не различить.]
+[[Вернуться назад.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="78" name="P3.1.3" tags="l2_intro" position="2925,525" size="100,100">(text-style:&quot;fidget&quot;)+(text-colour: #ddd)[Поднялся ветер, в воздухе теперь туча песка. След теперь не различить.]
 ---
 [[Искать.-&gt;P3.2]]
-[[Вернуться назад.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="80" name="P0.1" tags="l12" position="425,25" size="100,100">(color:$hero_color)[Тебя] окликнула (color:$mom_color)[Мама].
+[[Вернуться назад.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="79" name="P0.1" tags="l12" position="425,25" size="100,100">(color:$hero_color)[Тебя] окликнула (color:$mom_color)[Мама].
 (color:$mom_color)[— $name! Открой калитку и проводи доктора!]
 ---
-[[Открыть калитку.-&gt;P0.2]]</tw-passagedata><tw-passagedata pid="81" name="P0.2" tags="l10" position="575,25" size="100,100">(color:$hero_color)[— Хорошо, Мама!]
+[[Открыть калитку.-&gt;P0.2]]</tw-passagedata><tw-passagedata pid="80" name="P0.2" tags="l10" position="575,25" size="100,100">(color:$hero_color)[— Хорошо, Мама!]
 (color:$mom_color)[Мама] в последнее время часто болеет. Доктор приходит почти каждый день. Он уже ждет у калитки.
 ---
-[[Впустить доктора.-&gt;P0.3]]</tw-passagedata><tw-passagedata pid="82" name="P0.3" tags="l10" position="725,25" size="100,100">(color:$hero_color)[Ты] открыл затвор. Доктор вошел и поздоровался:
+[[Впустить доктора.-&gt;P0.3]]</tw-passagedata><tw-passagedata pid="81" name="P0.3" tags="l10" position="725,25" size="100,100">(color:$hero_color)[Ты] открыл затвор. Доктор вошел и поздоровался:
 — Привет, как твоя (color:$mom_color)[Мама]?
 ---
 [[Промолчать.-&gt;P0.4]]
-[[Ответить.-&gt;P0.5]]</tw-passagedata><tw-passagedata pid="83" name="P0.4" tags="l10" position="875,175" size="100,100">Не хочу говорить. Доктор (color:$hero_color)[тебе] не нравится. От него больницей пахнет.
+[[Ответить.-&gt;P0.5]]</tw-passagedata><tw-passagedata pid="82" name="P0.4" tags="l10" position="875,175" size="100,100">Не хочу говорить. Доктор (color:$hero_color)[тебе] не нравится. От него больницей пахнет.
 — Не в духе? Что ж, пошли к твоей (color:$mom_color)[Маме].
 ---
-[[Проводить.-&gt;P0.5.1]]</tw-passagedata><tw-passagedata pid="84" name="P0.5" tags="l10" position="875,25" size="100,100">(color:$hero_color)[— Здрасте… Нормально.] — выдавил (color:$hero_color)[ты]. (color:$mom_color)[Мама] всегда грустная, когда доктор приходит.
+[[Проводить.-&gt;P0.5.1]]</tw-passagedata><tw-passagedata pid="83" name="P0.5" tags="l10" position="875,25" size="100,100">(color:$hero_color)[— Здрасте… Нормально.] — выдавил (color:$hero_color)[ты]. (color:$mom_color)[Мама] всегда грустная, когда доктор приходит.
 — Пойдем к ней.
 ---
-[[Проводить.-&gt;P0.5.1]]</tw-passagedata><tw-passagedata pid="85" name="P0.6" tags="l11" position="1275,25" size="100,100">Вы вошли в комнату к (color:$mom_color)[Маме]. Она попыталась встать, но не вышло. Доктор поспешил к ней.
+[[Проводить.-&gt;P0.5.1]]</tw-passagedata><tw-passagedata pid="84" name="P0.6" tags="l11" position="1275,25" size="100,100">Вы вошли в комнату к (color:$mom_color)[Маме]. Она попыталась встать, но не вышло. Доктор поспешил к ней.
 (color:$mom_color)[— $name, золотце. Иди к себе, поиграй. Мы с доктором поговорим пока.]
 ---
 [[Сопротивляться.-&gt;P0.8]]
-[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="86" name="P0.7" tags="l11" position="1400,25" size="100,100">(set:$obedient to true)(color:$mom_color)[— Какой ты у меня (text-colour:$obedient_color)[$obedient_string]!]
+[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="85" name="P0.7" tags="l11" position="1400,25" size="100,100">(set:$obedient to true)(color:$mom_color)[— Какой ты у меня (text-colour:$obedient_color)[$obedient_string]!]
 
 (color:$hero_color)[Ты] всегда делаешь как скажут. (color:$hero_color)[ты] вышел и закрыл за собой дверь. Почему в этот раз (color:$hero_color)[тебе] не разрешили остаться?
 ---
-[[Остаться за дверью.-&gt;P0.10]]</tw-passagedata><tw-passagedata pid="87" name="P0.8" tags="l11" position="1400,175" size="100,100">(color:$hero_color)[— Нет, я хочу с тобой побыть.]
+[[Остаться за дверью.-&gt;P0.10]]</tw-passagedata><tw-passagedata pid="86" name="P0.8" tags="l11" position="1400,175" size="100,100">(color:$hero_color)[— Нет, я хочу с тобой побыть.]
 — $name, пожалуйста. У нас взрослый разговор.
 (color:$mom_color)[— Я позову тебя как мы закончим.]
 ---
 [[Сопротивляться.-&gt;P0.9]]
-[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="88" name="P0.9" tags="l11" position="1550,175" size="100,100">(set:$obedient to false)(color:$mom_color)[— Какой ты у меня (text-colour:$not_obedient_color)[$not_obedient_string]!]
+[[Выйти из комнаты.-&gt;P0.7]]</tw-passagedata><tw-passagedata pid="87" name="P0.9" tags="l11" position="1550,175" size="100,100">(set:$obedient to false)(color:$mom_color)[— Какой ты у меня (text-colour:$not_obedient_color)[$not_obedient_string]!]
 (color:$hero_color)[— Нет-нет-нет! Говорите при мне!]
 Доктор не стал дальше слушать. Взял подмышку и вытолкнул за дверь. Чего они там секретничают?
 ---
-[[Остаться за дверью.-&gt;P0.10]]</tw-passagedata><tw-passagedata pid="89" name="P0.10" tags="l12" position="1675,25" size="100,100">(if: $obedient is true)[(color:$mom_color)[Мама] же не сказала сразу идти к себе? Постой тут немного.](else:)[(color:$hero_color)[Ты] громко утопал в комнату, будто ушел. Потом на цыпочках вернулся назад. Теперь они думают, что (color:$hero_color)[ты] ушел.]
+[[Остаться за дверью.-&gt;P0.10]]</tw-passagedata><tw-passagedata pid="88" name="P0.10" tags="l12" position="1675,25" size="100,100">(if: $obedient is true)[(color:$mom_color)[Мама] же не сказала сразу идти к себе? Постой тут немного.](else:)[(color:$hero_color)[Ты] громко утопал в комнату, будто ушел. Потом на цыпочках вернулся назад. Теперь они думают, что (color:$hero_color)[ты] ушел.]
 
 В двери есть дырка. Когда-то здесь был замок.
 ---
-[[Остаться за дверью.-&gt;P0.11]]</tw-passagedata><tw-passagedata pid="90" name="P0.11" tags="l12" position="1825,25" size="100,100">(set:$count to 0)|text&gt;[][---](link:&quot;Подсматривать
+[[Остаться за дверью.-&gt;P0.11]]</tw-passagedata><tw-passagedata pid="89" name="P0.11" tags="l12" position="1825,25" size="100,100">(set:$count to 0)|text&gt;[][---](link:&quot;Подсматривать
 &quot;)[(set:$count to it + 1)(append: ?text)[Доктор огляделся по сторонам и наклонился к (color:$mom_color)[Маме].
 ]](link:&quot;Подслушивать
 &quot;)[(set:$count to it + 1)(append: ?text)[— Вы ему еще ничего не говорили? На кого он останется?
 (color:$mom_color)[— Нет, я не могу найти в себе сил.]
-]](event:when $count &gt;= 2)[[[Остаться за дверью.-&gt;P0.12]]]</tw-passagedata><tw-passagedata pid="91" name="P0.12" tags="l12" position="1975,25" size="100,100">(set:$count to 0)|text&gt;[]|hear&gt;[][---](link:&quot;Подсматривать
+]](event:when $count &gt;= 2)[[[Остаться за дверью.-&gt;P0.12]]]</tw-passagedata><tw-passagedata pid="90" name="P0.12" tags="l12" position="1975,25" size="100,100">(set:$count to 0)|text&gt;[]|hear&gt;[][---](link:&quot;Подсматривать
 &quot;)[(set:$count to it + 1)(append: ?text)[Доктор взял (color:$mom_color)[Маму] за руку. Она рыдает.
 ]](link:&quot;Подслушивать
 &quot;)[(set:$count to it + 1)(append: ?text)[— Я знаю хорошую семью, мы можем его туда устроить.
 (color:$mom_color)[— Правда? Доктор, спасибо!]
 — Ну-ну, я его не брошу. А сейчас отдыхайте. Я вернусь завтра.
-]](event:when $count &gt;= 2)[[[Спрятаться к себе в комнату.-&gt;P0.13]]]</tw-passagedata><tw-passagedata pid="92" name="P0.13" tags="l5" position="2125,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Доктор сразу ушел. Даже не попрощался. (color:$mom_color)[Мама] сразу легла спать. (color:$hero_color)[Я] не стал её будить.(event:when $count &gt; 0)[
+]](event:when $count &gt;= 2)[[[Спрятаться к себе в комнату.-&gt;P0.13]]]</tw-passagedata><tw-passagedata pid="91" name="P0.13" tags="l5" position="2125,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Доктор сразу ушел. Даже не попрощался. (color:$mom_color)[Мама] сразу легла спать. (color:$hero_color)[Я] не стал её будить.(event:when $count &gt; 0)[
 
 (color:$hero_color)[Я] не могу заснуть. О чем они говорили? (color:$mom_color)[Мама] умирает?{&lt;script&gt;Sound.stop(0);&lt;/script&gt;(set:$count to 0)}(replace: ?end)[(link-goto: &quot;Проверить Маму.&quot;,&quot;P0.14&quot;)]]
 ---
-|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="93" name="P0.14" tags="l11" position="2275,25" size="100,100">(set:$count to 0)|text&gt;[][---](link:&quot;Осмотреть.
+|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="92" name="P0.14" tags="l11" position="2275,25" size="100,100">(set:$count to 0)|text&gt;[][---](link:&quot;Осмотреть.
 &quot;)[(set:$count to it + 1)(append:?text)[(color:$mom_color)[Мама] лежит на кровати. Она очень спокойная. Даже слишком.
 ]](link:&quot;Поговорить.
 &quot;)[(set:$count to it + 1)(append:?text)[(color:$hero_color)[— Мам, ты спишь?] — никакого ответа.
 ]](link:&quot;Потрогать.
 &quot;)[(set:$count to it + 1)(append:?text)[(color:$mom_color)[Мама] на ощупь холодная. Может быть она замерзла? Или?…
-]](event:when $count &gt;= 3)[[[Потрясти.-&gt;P0.15]]]</tw-passagedata><tw-passagedata pid="94" name="P0.15" tags="l11" position="2425,25" size="100,100">(color:$hero_color)[— {(cond: visits is 1,&quot;Мам, просыпайся.&quot;,visits is 2,&quot;Мам, не смешно.&quot;,visits is 3,&quot;Мне страшно! Не пугай меня!&quot;,visits is 4,&quot;Мамочка, скажи что-нибудь…&quot;,visits &gt;= 5,&quot;Мамa…&quot;)}]
+]](event:when $count &gt;= 3)[[[Потрясти.-&gt;P0.15]]]</tw-passagedata><tw-passagedata pid="93" name="P0.15" tags="l11" position="2425,25" size="100,100">(color:$hero_color)[— {(cond: visits is 1,&quot;Мам, просыпайся.&quot;,visits is 2,&quot;Мам, не смешно.&quot;,visits is 3,&quot;Мне страшно! Не пугай меня!&quot;,visits is 4,&quot;Мамочка, скажи что-нибудь…&quot;,visits &gt;= 5,&quot;Мамa…&quot;)}]
 (color:$mom_color)[Мама] лежит как раньше. Её тело тяжелое и твердое.
 ---
 [[Трясти дальше-&gt;P0.15]]
-[[Позвать на помощь.-&gt;P0.16]]</tw-passagedata><tw-passagedata pid="95" name="P0.16" tags="l10" position="2575,25" size="100,100">(set: $count to 0)(color:$hero_color)[Ты] выбежал на улицу.(event:when $count &gt;= 1)[
+[[Позвать на помощь.-&gt;P0.16]]</tw-passagedata><tw-passagedata pid="94" name="P0.16" tags="l10" position="2575,25" size="100,100">(set: $count to 0)(color:$hero_color)[Ты] выбежал на улицу.(event:when $count &gt;= 1)[
 (color:$hero_color)[— Помогите!](event:when $count &gt;= 2)[(color:$hero_color)[
 — ПО-МО-ГИ-ТЕ!]](event:when $count &gt;= 3)[(color:$hero_color)+(text-style:&quot;rumble&quot;)[
 — ПО-МООО-ГИИИ-ТЕЕЕЕ!!]]](event:when $count &gt;= 4)[
 На (color:$hero_color)[твой] крик прибежал сосед.]
 ---
 (link-repeat:&quot;Звать  на помощь.&quot;)[(set: $count to it + 1)(if: $count&gt;=5)[(goto:&quot;P0.17&quot;)]](event:when $count &gt;= 4)[
-[[Поговорить с соседом.-&gt;P0.17]]]</tw-passagedata><tw-passagedata pid="96" name="P0.17" tags="l10 need_footer" position="2725,25" size="100,100">— $name, успокойся! Что случилось?
+[[Поговорить с соседом.-&gt;P0.17]]]</tw-passagedata><tw-passagedata pid="95" name="P0.17" tags="l10 need_footer" position="2725,25" size="100,100">— $name, успокойся! Что случилось?
 (color:$hero_color)[— Маме плохо! Она внутри, в подвале.]
 ---
-[[Проводить.-&gt;P0.18]]</tw-passagedata><tw-passagedata pid="97" name="P0.18" tags="l11" position="2875,25" size="100,100">— Ох… $name, иди к себе в комнату. Я тебя потом позову.
+[[Проводить.-&gt;P0.18]]</tw-passagedata><tw-passagedata pid="96" name="P0.18" tags="l11" position="2875,25" size="100,100">— Ох… $name, иди к себе в комнату. Я тебя потом позову.
 ---
 (if:$obedient is true)[(text-colour:$obedient_color)[[[(Послушный) Иди в комнату.-&gt;P0.19]]]
 ~~(text-colour:$not_obedient_color)[(Капризный) Сопротивляться.]~~](else:)[~~(text-colour:$obedient_color)[(Послушный) Иди в комнату]~~
-(text-colour:$not_obedient_color)[[[(Капризный) Сопротивляться.-&gt;P0.20]]]]</tw-passagedata><tw-passagedata pid="98" name="P0.19" tags="l12" position="3025,25" size="100,100">(color:$hero_color)[Ты] пошел к себе в комнату. В доме много людей. Они о чем-то напряженное говорят. (color:$hero_color)[Тебе] остаётся только ждать, пока кто-то придёт.
+(text-colour:$not_obedient_color)[[[(Капризный) Сопротивляться.-&gt;P0.20]]]]</tw-passagedata><tw-passagedata pid="97" name="P0.19" tags="l12" position="3025,25" size="100,100">(color:$hero_color)[Ты] пошел к себе в комнату. В доме много людей. Они о чем-то напряженное говорят. (color:$hero_color)[Тебе] остаётся только ждать, пока кто-то придёт.
 ---
-[[Ждать.-&gt;P0.23.1]]</tw-passagedata><tw-passagedata pid="99" name="P0.20" tags="l11" position="3025,175" size="100,100">(color:$hero_color)[— Нет, я маму не брошу!]
+[[Ждать.-&gt;P0.23.1]]</tw-passagedata><tw-passagedata pid="98" name="P0.20" tags="l11" position="3025,175" size="100,100">(color:$hero_color)[— Нет, я маму не брошу!]
 Дядя взял (color:$hero_color)[тебя] за шкирку, кинул в комнату и запер. Сегодня все такие грубые.
 ---
 [[Кричать.-&gt;P0.21]]
-[[Биться о дверь.-&gt;P0.21]]</tw-passagedata><tw-passagedata pid="100" name="P0.25" tags="l5" position="3950,50" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Здравствуй, дневник. Извини, не писал тебе уже две недели. Было много всего нового.(event:when $count &gt; 0)[
+[[Биться о дверь.-&gt;P0.21]]</tw-passagedata><tw-passagedata pid="99" name="P0.25" tags="l5" position="3950,50" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Здравствуй, дневник. Извини, не писал тебе уже две недели. Было много всего нового.(event:when $count &gt; 0)[
 
 (color:$mom_color)[Мама] умерла. (color:$hero_color)[Я] много плакал, мне было страшно. Всюду ходили странные люди и жалели меня. (color:$hero_color)[Я] не знал, что со мной будет.](event:when $count &gt; 1)[
 
@@ -804,190 +809,243 @@ test
 
 (color:$pet_color)[$pet] им тоже не понравился. (color:$hero_color)[Я] часто сплю с ним в сарае. Здесь (color:$hero_color)[меня] никто не беспокоит.]
 ---
-|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]&#96;</tw-passagedata><tw-passagedata pid="101" name="P0.21" tags="l12" position="3175,175" size="100,100">Никто не пришел. Они оглохли там что ли?
+|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]&#96;</tw-passagedata><tw-passagedata pid="100" name="P0.21" tags="l12" position="3175,175" size="100,100">Никто не пришел. Они оглохли там что ли?
 (color:$hero_color)[— Выпустите! Я всё Маме расскажу!]
 ---
 [[Кричать.-&gt;P0.22]]
-[[Биться о дверь.-&gt;P0.22]]</tw-passagedata><tw-passagedata pid="102" name="P0.22" tags="l12" position="3325,175" size="100,100">(color:$hero_color)[(text-style:&quot;rumble&quot;)[— ВЫ-ПУ-СТИ-ТЕ! МА-А-А-А-А-МА-А-А-А!]]
+[[Биться о дверь.-&gt;P0.22]]</tw-passagedata><tw-passagedata pid="101" name="P0.22" tags="l12" position="3325,175" size="100,100">(color:$hero_color)[(text-style:&quot;rumble&quot;)[— ВЫ-ПУ-СТИ-ТЕ! МА-А-А-А-А-МА-А-А-А!]]
 ---
 [[Кричать.-&gt;P0.24]]
-[[Биться о дверь.-&gt;P0.24]]</tw-passagedata><tw-passagedata pid="103" name="P0.24" tags="l12" position="3475,175" size="100,100">У (color:$hero_color)[тебя] кончились силы. Горло болит. (color:$hero_color)[Ты] устал…
+[[Биться о дверь.-&gt;P0.24]]</tw-passagedata><tw-passagedata pid="102" name="P0.24" tags="l12" position="3475,175" size="100,100">У (color:$hero_color)[тебя] кончились силы. Горло болит. (color:$hero_color)[Ты] устал…
 ---
-[[Ждать.-&gt;P0.23.1]]</tw-passagedata><tw-passagedata pid="104" name="Footer" tags="footer" position="150,175" size="100,100">(if:$debug is true)[(link-repeat:&quot; Ты |obedient&gt;[].&quot;)[{
+[[Ждать.-&gt;P0.23.1]]</tw-passagedata><tw-passagedata pid="103" name="Footer" tags="footer" position="150,175" size="100,100">(if:$debug is true)[(link-repeat:&quot; Ты |obedient&gt;[].&quot;)[{
 	(set:$obedient to not it)
 	(replace: ?obedient)[(if:$obedient is true)[$obedient_string](else:)[$not_obedient_string]]
-}](replace: ?obedient)[(if:$obedient is true)[$obedient_string](else:)[$not_obedient_string]]]</tw-passagedata><tw-passagedata pid="105" name="P55" tags="l12" position="2050,1600" size="100,100">(color:$rose_color)[— (text-style:&quot;subscript&quot;)[$name, ты спишь?]]
+}](replace: ?obedient)[(if:$obedient is true)[$obedient_string](else:)[$not_obedient_string]]]</tw-passagedata><tw-passagedata pid="104" name="P55" tags="l12" position="2050,1600" size="100,100">(color:$rose_color)[— (text-style:&quot;subscript&quot;)[$name, ты спишь?]]
 (color:$rose_color)[Роза] подсела ко (color:$hero_color)[мне] на кровать.
 ---
 (if:$obedient is true)[(text-colour:$obedient_color)[[[((upperfirst:$obedient_string)) Ответить.-&gt;P56]]]
 ~~(text-colour:$not_obedient_color)[($not_obedient_string) Притвориться спящим.]~~](else:)[~~(text-colour:$obedient_color)[((upperfirst:$obedient_string)) Ответить]~~
-(text-colour:$not_obedient_color)[[[($not_obedient_string) Притвориться спящим.-&gt;P56.1]]]]</tw-passagedata><tw-passagedata pid="106" name="P56" tags="l12 need_footer" position="1975,1750" size="100,100">(color: $hero_color)[— Не сплю. А ты почему не спишь?]
+(text-colour:$not_obedient_color)[[[($not_obedient_string) Притвориться спящим.-&gt;P56.1]]]]</tw-passagedata><tw-passagedata pid="105" name="P56" tags="l12 need_footer" position="1975,1750" size="100,100">(color: $hero_color)[— Не сплю. А ты почему не спишь?]
 (color: $rose_color)[— Мне скучно. Хочешь поиграть?]
 ---
 [[Согласиться.-&gt;P57]]
-[[Отказаться.-&gt;P57.1]]</tw-passagedata><tw-passagedata pid="107" name="P56.1" tags="l12" position="2125,1750" size="100,100">(color: $hero_color)[Я] лежу дальше как ни в чем не бывало. Для убедительности стал громко храпеть.
+[[Отказаться.-&gt;P57.1]]</tw-passagedata><tw-passagedata pid="106" name="P56.1" tags="l12" position="2125,1750" size="100,100">(color: $hero_color)[Я] лежу дальше как ни в чем не бывало. Для убедительности стал громко храпеть.
 (color: $hero_color)[— Хр-р-р, пфффф… хр-р, пфффф…]
 (color: $rose_color)[— $name, мне скучно.]
 ---
-[[Притворяться спящим.-&gt;P56.2]]</tw-passagedata><tw-passagedata pid="108" name="P57" tags="l12" position="1900,1900" size="100,100">Я всё-равно не сплю. Можно и поиграть.
+[[Притворяться спящим.-&gt;P56.2]]</tw-passagedata><tw-passagedata pid="107" name="P57" tags="l12" position="1900,1900" size="100,100">Я всё-равно не сплю. Можно и поиграть.
 (color: $hero_color)[— Ну ладно, пойдем.]
 (color: $rose_color)[— Ой, здорово. За мной!]
 ---
-[[Следовать.-&gt;P58]]</tw-passagedata><tw-passagedata pid="109" name="P57.1" tags="l12" position="2050,2000" size="100,100">(set: $candy to true)(text-colour:$hero_color)[Я] устал и хочу спать. 
+[[Следовать.-&gt;P58]]</tw-passagedata><tw-passagedata pid="108" name="P57.1" tags="l12" position="2050,2000" size="100,100">(set: $candy to true)(text-colour:$hero_color)[Я] устал и хочу спать. 
 (text-colour:$hero_color)[— Нет, не хочу. Иди домой.]
 (text-colour:$rose_color)[— А я тебе конфетку дам! Только ты меня слушайся.]
 ---
 [[Согласиться.-&gt;P57]]
-(if:$obedient is true)[~~(text-colour:$not_obedient_color)[($not_obedient_string) Отказаться.]~~](else:)[(text-colour:$not_obedient_color)[[[($not_obedient_string) Отказаться.-&gt;P57.3]]]]</tw-passagedata><tw-passagedata pid="110" name="P56.2" tags="l12 need_footer" position="2275,1750" size="100,100">Да чего она пристала? Не видишь сплю! (color: $hero_color)[Я] стал храпеть еще громче.
+(if:$obedient is true)[~~(text-colour:$not_obedient_color)[($not_obedient_string) Отказаться.]~~](else:)[(text-colour:$not_obedient_color)[[[($not_obedient_string) Отказаться.-&gt;P57.3]]]]</tw-passagedata><tw-passagedata pid="109" name="P56.2" tags="l12 need_footer" position="2275,1750" size="100,100">Да чего она пристала? Не видишь сплю! (color: $hero_color)[Я] стал храпеть еще громче.
 (color: $hero_color)[— (text-style:&quot;shudder&quot;)[ХРРР-Р-Р-Р], пфффф… (text-style:&quot;shudder&quot;)[ХРРР-Р-Р], пфффф…]
 (color: $rose_color)[$name, я знаю, что ты не спишь. Хватит притворяться! Пошли играть!]
 ---
 [[Согласиться.-&gt;P57]]
-[[Отказаться.-&gt;P57.1]]</tw-passagedata><tw-passagedata pid="111" name="P58" tags="l11" position="1900,2050" size="100,100">(color: $rose_color)[Роза] привела меня в комнату к (color: $mom_color)[Маме]. Сейчас тут осталась голая кушетка и большой шкаф. Всё остальное унесли.
+[[Отказаться.-&gt;P57.1]]</tw-passagedata><tw-passagedata pid="110" name="P58" tags="l11" position="1900,2050" size="100,100">(color: $rose_color)[Роза] привела меня в комнату к (color: $mom_color)[Маме]. Сейчас тут осталась голая кушетка и большой шкаф. Всё остальное унесли.
 (color: $rose_color)[— Мы будем играть в доктора! Я врач, а ты больной.]
 ---
-[[Слушать дальше.-&gt;P59]]</tw-passagedata><tw-passagedata pid="112" name="P59" tags="l11" position="1900,2200" size="100,100">(text-colour:$rose_color)[Роза] натянула белый халат.
+[[Слушать дальше.-&gt;P59]]</tw-passagedata><tw-passagedata pid="111" name="P59" tags="l11" position="1900,2200" size="100,100">(text-colour:$rose_color)[Роза] натянула белый халат.
 (text-colour:$rose_color)[— (if: $candy is true)[Закрой глаза, открой рот! Будет тебе конфета.](else:)[Пациент, ложитесь на кровать, закройте глаза.]]
 ---
-[[Лечь и закрыть глаза.-&gt;P59.1]]</tw-passagedata><tw-passagedata pid="113" name="P59.1" tags="l13" position="1900,2350" size="100,100">(text-colour:$hero_color)[Я] лег на кушетку и закрыл глаза.
+[[Лечь и закрыть глаза.-&gt;P59.1]]</tw-passagedata><tw-passagedata pid="112" name="P59.1" tags="l13" position="1900,2350" size="100,100">(text-colour:$hero_color)[Я] лег на кушетку и закрыл глаза.
 (text-colour:$rose_color)[— Пациент, подготовьтесь к анестезии.]
 (text-colour:$rose_color)[Роза] взяла (text-colour:$hero_color)[меня] за руку и уколола.
 (text-colour:$hero_color)[— Ай, ты что делаешь?]
 ---
-(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Открыть глаза.-&gt;P59.2]]</tw-passagedata><tw-passagedata pid="114" name="P59.2" tags="l11" position="1900,2500" size="100,100">(text-colour:$rose_color)[Роза] нависла надо (text-colour:$hero_color)[мной] со шприцом. (text-colour:$hero_color)[Мне] внезапно сильно захотелось спать. День тяжелый был.
+(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Открыть глаза.-&gt;P59.2]]</tw-passagedata><tw-passagedata pid="113" name="P59.2" tags="l11" position="1900,2500" size="100,100">(text-colour:$rose_color)[Роза] нависла надо (text-colour:$hero_color)[мной] со шприцом. (text-colour:$hero_color)[Мне] внезапно сильно захотелось спать. День тяжелый был.
 (text-colour:$hero_color)[— Роза… Я посплю немножко…]
 (text-colour:$rose_color)[— Да-да, конечно. Наркозу нужно время!]
 ---
-(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Заснуть.-&gt;P60]]</tw-passagedata><tw-passagedata pid="115" name="P60" tags="l13" position="1900,2650" size="100,100">(text-colour:$rose_color)+(text-style:&quot;blurrier&quot;)[— $name!]
+(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Заснуть.-&gt;P60]]</tw-passagedata><tw-passagedata pid="114" name="P60" tags="l13" position="1900,2650" size="100,100">(text-colour:$rose_color)+(text-style:&quot;blurrier&quot;)[— $name!]
 ---
-[[Открыть глаза.-&gt;P60.1]]</tw-passagedata><tw-passagedata pid="116" name="P57.3" tags="l12" position="2225,1900" size="100,100">(text-colour:$hero_color)[— Нет, отстань!]
+[[Открыть глаза.-&gt;P60.1]]</tw-passagedata><tw-passagedata pid="115" name="P57.3" tags="l12" position="2225,1900" size="100,100">(text-colour:$hero_color)[— Нет, отстань!]
 (text-colour:$rose_color)[Роза] залезла в карман и достала конфету. Развернула фантик и съела. Вкусно запахло шоколадом. 
 (text-colour:$rose_color)[— Ммм… Как вкусно. У меня еще есть. Поиграешь со мной и отдам!]
 ---
-[[Согласиться.-&gt;P57]]</tw-passagedata><tw-passagedata pid="117" name="P60.1" tags="l13" position="1900,2800" size="100,100">(text-colour:$rose_color)+(text-style:&quot;blur&quot;)[— $name, проснись!]
+[[Согласиться.-&gt;P57]]</tw-passagedata><tw-passagedata pid="116" name="P60.1" tags="l13" position="1900,2800" size="100,100">(text-colour:$rose_color)+(text-style:&quot;blur&quot;)[— $name, проснись!]
 ---
-[[Открыть глаза.-&gt;P60.2]]</tw-passagedata><tw-passagedata pid="118" name="P60.2" tags="l13" position="1901,2950" size="100,100">(text-colour:$rose_color)[— Слишком много вколола?…]
+[[Открыть глаза.-&gt;P60.2]]</tw-passagedata><tw-passagedata pid="117" name="P60.2" tags="l13" position="1901,2950" size="100,100">(text-colour:$rose_color)[— Слишком много вколола?…]
 ---
-[[Открыть глаза!-&gt;P60.3]]</tw-passagedata><tw-passagedata pid="119" name="P60.3" tags="l11" position="1900,3100" size="100,100">(text-colour:$hero_color)[Я] всё еще лежу на кровати. Не могу пошевелиться. Во рту какой-то комок тряпок. (if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
+[[Открыть глаза!-&gt;P60.3]]</tw-passagedata><tw-passagedata pid="118" name="P60.3" tags="l11" position="1900,3100" size="100,100">(text-colour:$hero_color)[Я] всё еще лежу на кровати. Не могу пошевелиться. Во рту какой-то комок тряпок. (if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
 ---
 (link-reveal-goto:&quot;Брыкаться.&quot;,&quot;P60.4&quot;)[(set: $struggle to it + 1)]
-[[Слушать дальше.-&gt;P60.4]]</tw-passagedata><tw-passagedata pid="120" name="P60.4" tags="l11" position="1900,3250" size="100,100">(if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
+[[Слушать дальше.-&gt;P60.4]]</tw-passagedata><tw-passagedata pid="119" name="P60.4" tags="l11" position="1900,3250" size="100,100">(if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
 (text-colour:$rose_color)[— Я знаю, что ты взял деньги. Попробуешь убежать, всё Маме расскажу.
 — Если Мама узнает, она тебя на кусочки порежет. Мама всегда добивается своего.]
 ---
 (link-reveal-goto:&quot;Брыкаться.&quot;,&quot;P60.5&quot;)[(set: $struggle to it + 1)]
-[[Слушать дальше.-&gt;P60.5]]</tw-passagedata><tw-passagedata pid="121" name="P60.5" tags="l11" position="1900,3400" size="100,100">(if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
+[[Слушать дальше.-&gt;P60.5]]</tw-passagedata><tw-passagedata pid="120" name="P60.5" tags="l11" position="1900,3400" size="100,100">(if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
 (text-colour:$rose_color)[— Знаешь, ты мне сразу не понравился. И $pet твой тоже. Ты только Отцу был нужен. Ему жалко тебя стало.]
 ---
 (link-reveal-goto:&quot;Брыкаться.&quot;,&quot;P60.6&quot;)[(set: $struggle to it + 1)]
-[[Слушать дальше.-&gt;P60.6]]</tw-passagedata><tw-passagedata pid="122" name="P60.6" tags="l11" position="1900,3550" size="100,100">(if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
+[[Слушать дальше.-&gt;P60.6]]</tw-passagedata><tw-passagedata pid="121" name="P60.6" tags="l11" position="1900,3550" size="100,100">(if: $struggle is 0)[Веревки сидят крепко, но есть небольшой зазор.](else-if: $struggle is 1)[Я чувствую, как веревки ослабевают.](else-if: $struggle is 2)[Веревка ослабла еще сильней. Главное не подать виду.](else:)[Веревка уже просто висит на мне. Нужно дождаться верного момента…]
 (text-colour:$rose_color)[— Знаешь что это? Это скальпель! Он очень острый. В твоего крысопса как по маслу вошел.]
 (text-colour:$rose_color)[Роза] подняла вверх глаза. На её лице появилась улыбка.
 (text-colour:$rose_color)[— Я даже не успела с ним поиграть.]
 ---
 (link-reveal:&quot;Вырваться.&quot;)[(set:$struggling to true)(if: $struggle &gt;= 1)[ (go-to:&quot;Ending&quot;)](else:)[(go-to:&quot;P60.8&quot;)]]
-[[Слушать дальше.-&gt;P60.8]]</tw-passagedata><tw-passagedata pid="123" name="P60.8" tags="l11" position="1900,3700" size="100,100">(if: $struggling is true)[(text-colour:$hero_color)[Я] попытался вырваться. Ничего не вышло. Веревки слишком крепко сидят.
+[[Слушать дальше.-&gt;P60.8]]</tw-passagedata><tw-passagedata pid="122" name="P60.8" tags="l11" position="1900,3700" size="100,100">(if: $struggling is true)[(text-colour:$hero_color)[Я] попытался вырваться. Ничего не вышло. Веревки слишком крепко сидят.
 ](text-colour:$rose_color_angry)[— Сестра! Начинаем операцию!]
 (text-colour:$rose_color)[— (text-style:&quot;subscript&quot;)[Да, доктор!]]
 (text-colour:$rose_color_angry)[Роза] протыкает (text-colour:$hero_color)[твой] живот ножиком. (text-colour:$hero_color)[Тебе] очень больно!
 ---
-[[Вырваться.-&gt;P60.9]]</tw-passagedata><tw-passagedata pid="124" name="P60.9" tags="l11_blur" position="1900,3850" size="100,100">Каждое движение причиняет страшные муки. Ты не можешь пошевелиться. В глазах мутнеет…
+[[Вырваться.-&gt;P60.9]]</tw-passagedata><tw-passagedata pid="123" name="P60.9" tags="l11_blur" position="1900,3850" size="100,100">Каждое движение причиняет страшные муки. Ты не можешь пошевелиться. В глазах мутнеет…
 (text-colour:$rose_color_angry)+(text-style:&quot;blur&quot;)[— Сестра, приготовьтесь ко вскрытию.]
 (text-colour:$rose_color)+(text-style:&quot;blur&quot;)[— (text-style:&quot;subscript&quot;)[Да, доктор!]]
 ---
-[[Лежать.-&gt;P60.10]]</tw-passagedata><tw-passagedata pid="125" name="P60.10" tags="l11_blurrier" position="1900,4000" size="100,100">Роза ведет скальпелем внутри моего живота.
+[[Лежать.-&gt;P60.10]]</tw-passagedata><tw-passagedata pid="124" name="P60.10" tags="l11_blurrier" position="1900,4000" size="100,100">Роза ведет скальпелем внутри моего живота.
 (text-colour:$rose_color_angry)+(text-style:&quot;blurrier&quot;)[— Сестра, уберите лишнюю кровь.]
 (text-colour:$rose_color)+(text-style:&quot;blurrier&quot;)[— (text-style:&quot;subscript&quot;)[Да, доктор!]]
 Последние силы покидают (text-colour:$hero_color)[тебя]. (text-colour:$hero_color)[Ты] мысленно открываешь свой дневник.
 
-[[Начать писать.-&gt;P60.11]]</tw-passagedata><tw-passagedata pid="126" name="P60.11" tags="l5" position="1900,4150" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Дорогой дневник. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
+[[Начать писать.-&gt;P60.11]]</tw-passagedata><tw-passagedata pid="125" name="P60.11" tags="l5" position="1900,4150" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Дорогой дневник. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
 
 Лежу на той же кровати, где умерла (text-colour:$mom_color)[Мама]. Мы были вместе до самого конца. Взрослые говорят, она на небесах.](event:when $count &gt; 1)[
 
 (text-colour:$mom_color)[Мама], (text-colour:$hero_color)[Я] иду к тебе!](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-reveal:&quot; ПОЛОХОЙ КОНЕЦ ⟲&quot;)[(restart:)]]]]
 ---
-|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="127" name="P0.23.1" tags="l12" position="3600,25" size="100,100">В окно кто-то скребется. (colour: $hero_color)[Ты] выглянул наружу — это (colour: $pet_color)[$pet]!
+|end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="126" name="P0.23.1" tags="l12" position="3600,25" size="100,100">В окно кто-то скребется. (colour: $hero_color)[Ты] выглянул наружу — это (colour: $pet_color)[$pet]!
 ---
 [[Впустить.-&gt;P0.23.3]]
-[[Прогнать.-&gt;P0.23.2]]</tw-passagedata><tw-passagedata pid="128" name="P0.23.2" tags="l12" position="3775,175" size="100,100">(colour: $hero_color)[Ты] открыл окошко.
+[[Прогнать.-&gt;P0.23.2]]</tw-passagedata><tw-passagedata pid="127" name="P0.23.2" tags="l12" position="3775,175" size="100,100">(colour: $hero_color)[Ты] открыл окошко.
 (colour: $hero_color)[— $pet, иди домой!]
 Крысопес ловко запрыгнул в щель. Он почуял (colour: $hero_color)[твоё] дурное настроение и лёг на коленки.
 ---
-(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Обнять.-&gt;P0.25]]</tw-passagedata><tw-passagedata pid="129" name="P0.23.3" tags="l12" position="3775,25" size="100,100">(colour: $hero_color)[— Заходи, $pet. Вместе веселей.]
+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Обнять.-&gt;P0.25]]</tw-passagedata><tw-passagedata pid="128" name="P0.23.3" tags="l12" position="3775,25" size="100,100">(colour: $hero_color)[— Заходи, $pet. Вместе веселей.]
 (colour: $hero_color)[Ты] впустил крысопса. Он почуял (colour: $hero_color)[твоё] дурное настроение и лёг на коленки.
 ---
-(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Обнять.-&gt;P0.25]]</tw-passagedata><tw-passagedata pid="130" name="P0.5.1" tags="l10" position="1025,25" size="100,100">На шум прибежал (text-colour:$pet_color)[$pet]! Он радостно прыгает вокруг.
+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Обнять.-&gt;P0.25]]</tw-passagedata><tw-passagedata pid="129" name="P0.5.1" tags="l10" position="1025,25" size="100,100">На шум прибежал (text-colour:$pet_color)[$pet]! Он радостно прыгает вокруг.
 ---
 [[Поиграть.-&gt;P0.5.2]]
-[[Прогнать.-&gt;P0.5.3]]</tw-passagedata><tw-passagedata pid="131" name="P0.5.2" tags="l10" position="1150,175" size="100,100">(text-colour:$hero_color)[Ты] склоняешься над крысопсом и погладил его. (text-colour:$pet_color)[$pet] рад тебя видеть.
+[[Прогнать.-&gt;P0.5.3]]</tw-passagedata><tw-passagedata pid="130" name="P0.5.2" tags="l10" position="1150,175" size="100,100">(text-colour:$hero_color)[Ты] склоняешься над крысопсом и погладил его. (text-colour:$pet_color)[$pet] рад тебя видеть.
 —$name, пошли скорей. Мне некогда тебя ждать!
 ---
-[[Проводить.-&gt;P0.6]]</tw-passagedata><tw-passagedata pid="132" name="P0.5.3" tags="l10" position="1150,25" size="100,100">(text-colour:$hero_color)[— Иди к себе! Не до тебя сейчас!]
+[[Проводить.-&gt;P0.6]]</tw-passagedata><tw-passagedata pid="131" name="P0.5.3" tags="l10" position="1150,25" size="100,100">(text-colour:$hero_color)[— Иди к себе! Не до тебя сейчас!]
 (text-colour:$pet_color)[$pet] жалобно скулит и плетется к себе в будку.
 ---
-[[Проводить.-&gt;P0.6]]</tw-passagedata><tw-passagedata pid="133" name="P3.6" tags="l13" position="3800,400" size="100,100">(text-style:&quot;blurrier&quot;)[— Парень! Очнись!]
+[[Проводить.-&gt;P0.6]]</tw-passagedata><tw-passagedata pid="132" name="P3.6" tags="l13" position="3800,400" size="100,100">(text-style:&quot;blurrier&quot;)[— Парень! Очнись!]
 ---
-[[Открыть глаза.-&gt;P3.7]]</tw-passagedata><tw-passagedata pid="134" name="P3.7" tags="l13" position="3800,550" size="100,100">(text-style:&quot;blur&quot;)[— Ты живой вообще? Только попробуй помереть!]
+[[Открыть глаза.-&gt;P3.7]]</tw-passagedata><tw-passagedata pid="133" name="P3.7" tags="l13" position="3800,550" size="100,100">(text-style:&quot;blur&quot;)[— Ты живой вообще? Только попробуй помереть!]
 
-(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Открыть глаза.-&gt;P3.8]]</tw-passagedata><tw-passagedata pid="135" name="P2.1.1" tags="l15" position="500,600" size="100,100">(text-colour:$hero_color)[— У меня $pet пропал. Иду его искать.]
+(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Открыть глаза.-&gt;P3.8]]</tw-passagedata><tw-passagedata pid="134" name="P2.1.1" tags="l15" position="500,600" size="100,100">(text-colour:$hero_color)[— У меня $pet пропал. Иду его искать.]
 (text-colour:$rose_color)[— $pet? Мы с ним с утра играли, а потом он убежал.]
 ---
-[[Спросить направления.-&gt;P2.1.4]]</tw-passagedata><tw-passagedata pid="136" name="P2.1.2" tags="l15" position="500,450" size="100,100">(text-colour:$hero_color)[— Отстань, мне некогда.]
+[[Спросить направления.-&gt;P2.1.4]]</tw-passagedata><tw-passagedata pid="135" name="P2.1.2" tags="l15" position="500,450" size="100,100">(text-colour:$hero_color)[— Отстань, мне некогда.]
 (text-colour:$rose_color)[— Что-то случилось? Тебе помочь?]
 ---
-[[Попросить помощи.-&gt;P2.1.1]]</tw-passagedata><tw-passagedata pid="137" name="P2.1.4" tags="l15" position="650,525" size="100,100">(text-colour:$hero_color)[— Вот как? И где мне его теперь искать?]
+[[Попросить помощи.-&gt;P2.1.1]]</tw-passagedata><tw-passagedata pid="136" name="P2.1.4" tags="l15" position="650,525" size="100,100">(text-colour:$hero_color)[— Вот как? И где мне его теперь искать?]
 (text-colour:$rose_color)[— Мы играли у выхода. $pet вдруг убежал от меня наружу.]
 ---
 [[Пойти искать.-&gt;P2.1.5]]
-[[Попросить помощи.-&gt;P2.1.6]]</tw-passagedata><tw-passagedata pid="138" name="P2.1.5" tags="l15" position="800,425" size="100,100">(text-colour:$hero_color)[— Ясно, пойду искать.]
+[[Попросить помощи.-&gt;P2.1.6]]</tw-passagedata><tw-passagedata pid="137" name="P2.1.5" tags="l15" position="800,425" size="100,100">(text-colour:$hero_color)[— Ясно, пойду искать.]
 (text-colour:$rose_color)[— $name, давай вечером поиграем? Приходи в свой старый дом. Я тебе кое-что покажу!]
 (text-colour:$hero_color)[— Хорошо, пока!]
 ---
-[[Пойти искать.-&gt;P2.2]]</tw-passagedata><tw-passagedata pid="139" name="P2.1.6" tags="l15" position="800,600" size="100,100">(text-colour:$rose_color)[— Извини, но мне сейчас некогда. Давай вечером поиграем? Приходи в свой старый дом. Я тебе кое-что покажу!]
+[[Пойти искать.-&gt;P2.2]]</tw-passagedata><tw-passagedata pid="138" name="P2.1.6" tags="l15" position="800,600" size="100,100">(text-colour:$rose_color)[— Извини, но мне сейчас некогда. Давай вечером поиграем? Приходи в свой старый дом. Я тебе кое-что покажу!]
 (text-colour:$hero_color)[— Хорошо, пока!]
 ---
-[[Пойти искать.-&gt;P2.2]]</tw-passagedata><tw-passagedata pid="140" name="P2.2.1" tags="l3" position="1100,525" size="100,100">(text-colour:$hero_color)[Ты] подошел к выходу. Выход охраняет здоровенный мутант — дядя Олег.
+[[Пойти искать.-&gt;P2.2]]</tw-passagedata><tw-passagedata pid="139" name="P2.2.1" tags="l3" position="1100,525" size="100,100">(text-colour:$hero_color)[Ты] подошел к выходу. Выход охраняет здоровенный мутант — дядя Олег.
 ---
 [[Поговорить.-&gt;P2.2.2]]
-(капризный)[[Пробежать.-&gt;P2.2.7]]</tw-passagedata><tw-passagedata pid="141" name="P2.2.2" tags="l3" position="1250,525" size="100,100">(text-colour:$hero_color)[— Здрасте!]
+(капризный)[[Пробежать.-&gt;P2.2.7]]</tw-passagedata><tw-passagedata pid="140" name="P2.2.2" tags="l3" position="1250,525" size="100,100">(text-colour:$hero_color)[— Здрасте!]
 — Привет, $name! Давно тебя не видно было. Как дела?
 ---
 [[Попросить пройти.-&gt;P2.2.4]]
-[[Рассказать о пропаже.-&gt;P2.2.5]]</tw-passagedata><tw-passagedata pid="142" name="P2.2.7" tags="l3" position="1525,400" size="100,100">Чего говорить? Дядя Олег тебя все равно не догонит. (text-colour:$hero_color)[Ты] рванул к выходу.
+[[Рассказать о пропаже.-&gt;P2.2.5]]</tw-passagedata><tw-passagedata pid="141" name="P2.2.7" tags="l3" position="1525,400" size="100,100">Чего говорить? Дядя Олег тебя все равно не догонит. (text-colour:$hero_color)[Ты] рванул к выходу.
 
 Как же (text-colour:$hero_color)[ты] ошибался. Охранник в два шага настиг (text-colour:$hero_color)[тебя] и схватил за шкирку.
 — Ты куда собрался? Иди домой!
 ---
 [[Ждать.-&gt;P2.2.8]]
-[[Искать в другом месте.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="143" name="P2.2.4" tags="l3" position="1175,675" size="100,100">(text-colour:$hero_color)[— Дядя Олег, выпустите пожалуйста!]
+[[Искать в другом месте.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="142" name="P2.2.4" tags="l3" position="1175,675" size="100,100">(text-colour:$hero_color)[— Дядя Олег, выпустите пожалуйста!]
 — $name, ты что сдурел? В разгаре дня наружу? Ты, конечно, тоже мутант, но там и помереть недолго.
 ---
-[[Рассказать о пропаже.-&gt;P2.2.5]]</tw-passagedata><tw-passagedata pid="144" name="P2.2.5" tags="l3" position="1325,675" size="100,100">(text-colour:$hero_color)[— У меня $pet пропал! Роза говорит, что он наружу убежал.]
+[[Рассказать о пропаже.-&gt;P2.2.5]]</tw-passagedata><tw-passagedata pid="143" name="P2.2.5" tags="l3" position="1325,675" size="100,100">(text-colour:$hero_color)[— У меня $pet пропал! Роза говорит, что он наружу убежал.]
 — Вот как? Поищешь вечером. Ничего ему не будет.
 ---
 (послушный)[[Уйти.-&gt;P2.2.6]]
-(капризный)[[Пробежать.-&gt;P2.2.7]]</tw-passagedata><tw-passagedata pid="145" name="P2.2.6" tags="l3" position="1500,750" size="100,100">(text-colour:$hero_color)[— Хорошо…]
+(капризный)[[Пробежать.-&gt;P2.2.7]]</tw-passagedata><tw-passagedata pid="144" name="P2.2.6" tags="l3" position="1500,750" size="100,100">(text-colour:$hero_color)[— Хорошо…]
 Если (text-colour:$pet_color)[$pet] вернулся, то он будет у купола. Домой он только вечером приходит.
 ---
-[[Проверить.-&gt;P4]]</tw-passagedata><tw-passagedata pid="146" name="P2.2.8" tags="l3" position="1675,400" size="100,100">Дядя Олег охраняет вход. Не может же он целый день стоять здесь? Нужно только дождаться нужного момента…
+[[Проверить.-&gt;P4]]</tw-passagedata><tw-passagedata pid="145" name="P2.2.8" tags="l3" position="1675,400" size="100,100">Дядя Олег охраняет вход. Не может же он целый день стоять здесь? Нужно только дождаться нужного момента…
 ---
 [[Ждать.-&gt;P2.2.9]]
-[[Искать в другом месте.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="147" name="P2.2.9" tags="l3" position="1675,550" size="100,100">Дядя Олег достал сигарету и курит. Не может же он целый день стоять здесь? Нужно только дождаться нужного момента…
+[[Искать в другом месте.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="146" name="P2.2.9" tags="l3" position="1675,550" size="100,100">Дядя Олег достал сигарету и курит. Не может же он целый день стоять здесь? Нужно только дождаться нужного момента…
 ---
 [[Ждать.-&gt;P2.2.10]]
-[[Искать в другом месте.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="148" name="P2.2.10" tags="l3" position="1675,700" size="100,100">Кто-то подошел к дяде Коле. Они увлеченно разговаривают. Не может же он целый день стоять здесь? Нужно только дождаться нужного момента…(click:&quot;увлеченно разговаривают&quot;)[(replace: ?run)[
+[[Искать в другом месте.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="147" name="P2.2.10" tags="l3" position="1675,700" size="100,100">Кто-то подошел к дяде Коле. Они увлеченно разговаривают. Не может же он целый день стоять здесь? Нужно только дождаться нужного момента…(click:&quot;увлеченно разговаривают&quot;)[(replace: ?run)[
 [[Пробежать.-&gt;P3.1]]]]
 ---
 [[Ждать.-&gt;P2.2.9]]
-[[Искать в другом месте.-&gt;P2.2.3]]|run&gt;[]</tw-passagedata><tw-passagedata pid="149" name="P3.1" tags="l2_intro" position="1975,250" size="100,100">Наконец-то выбрался. (text-colour:$hero_color)[Ты] сразу увидел следы на песке. Может быть (text-colour:$pet_color)[$pet]?
+[[Искать в другом месте.-&gt;P2.2.3]]|run&gt;[]</tw-passagedata><tw-passagedata pid="148" name="P3.1" tags="l2_intro" position="1975,250" size="100,100">Наконец-то выбрался. (text-colour:$hero_color)[Ты] сразу увидел следы на песке. Может быть (text-colour:$pet_color)[$pet]?
 ---
 [[Искать.-&gt;P3.1.1]]
-[[Вернуться назад.-&gt;P2.2]]</tw-passagedata><tw-passagedata pid="150" name="P2.2.3" tags="l3" position="2100,425" size="100,100">Если (text-colour:$pet_color)[$pet] вернулся, то он будет у купола. Домой он только вечером приходит.
+[[Вернуться назад.-&gt;P2.2]]</tw-passagedata><tw-passagedata pid="149" name="P2.2.3" tags="l3" position="2100,425" size="100,100">Если (text-colour:$pet_color)[$pet] вернулся, то он будет у купола. Домой он только вечером приходит.
 ---
-[[Проверить.-&gt;P4]]</tw-passagedata><tw-passagedata pid="151" name="P3.8" tags="l14" position="3800,700" size="100,100">(text-colour:$hero_color)[Ты] открыл глаза. Вокруг аккуратная комната почти без вещей. Над (text-colour:$hero_color)[тобой] склонился взволнованный мужчина. Еще двое стоят рядом. Они все мутанты.
+[[Проверить.-&gt;P4]]</tw-passagedata><tw-passagedata pid="150" name="P3.8" tags="l14" position="3800,700" size="100,100">(text-colour:$hero_color)[Ты] открыл глаза. Вокруг аккуратная комната почти без вещей. Над (text-colour:$hero_color)[тобой] склонился взволнованный мужчина. Еще двое стоят рядом. Они все мутанты.
 
 [[Что это за место?-&gt;P3.9]]
-[[Что случилось?-&gt;P3.10]]</tw-passagedata><tw-passagedata pid="152" name="P3.9" tags="" position="3725,850" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="153" name="P3.10" tags="" position="3875,850" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+[[Что случилось?-&gt;P3.10]]</tw-passagedata><tw-passagedata pid="151" name="P3.9" tags="l14" position="3725,850" size="100,100">(text-colour:$hero_color)[— Дяденьки, а где я?]
+— Это караван. Тебе сильно повезло, что мы проезжали мимо. Что ты потерял днём в пустыне?
+---
+[[Рассказать.-&gt;P3.11]]</tw-passagedata><tw-passagedata pid="152" name="P3.10" tags="l14" position="3875,850" size="100,100">(text-colour:$hero_color)[— Дядь, как я сюда попал?]
+— Это караван. Тебе сильно повезло, что мы проезжали мимо. Что ты потерял днём в пустыне?
+---
+[[Рассказать.-&gt;P3.11]]</tw-passagedata><tw-passagedata pid="153" name="P3.11" tags="l14" position="3800,1000" size="100,100">(text-colour:$hero_color)[— У меня друг пропал, я его ищу.]
+— Друг? Он-то зачем сюда полез? Как он выглядит?
+---
+[[Описать.-&gt;P3.12]]</tw-passagedata><tw-passagedata pid="154" name="P3.12" tags="l14" position="3800,1150" size="100,100">(text-colour:$hero_color)[— У него белая шерсть. С левого боку шрам. Гладкий хвост, $pet зовут.]
+Мутанты дружно засмеялись.
+— Ха-ха-ха! Так твой друг — зверь. И ты ради него в пекло полез?
+
+[[Объяснить.-&gt;P3.12.1]]</tw-passagedata><tw-passagedata pid="155" name="P3.12.1" tags="l14" position="3800,1300" size="100,100">(text-colour:$hero_color)[Тебе] даже обидно стало. Конечно, полез!
+(text-colour:$hero_color)[— Я преданный и друзей не бросаю! Он бы тоже за мной пошел!]
+— Ха-ха-ха! Я б с ним в разведку пошел!
+— Ха-ха-ха! Хорош малец!
+— Ха-ха-ха! Во даёт!
+---
+[[Расспросить о друге.-&gt;P3.13]]
+[[Попросить помощи.-&gt;P3.14]]</tw-passagedata><tw-passagedata pid="156" name="P3.13" tags="l14" position="3725,1450" size="100,100">(text-colour:$hero_color)[— Так вы его не видели? $pet без меня точно пропадёт.]
+— Нет, извини. Вряд ли он далеко ушел. Может он уже вернулся?
+---
+[[Попросить помощи.-&gt;P3.14]]</tw-passagedata><tw-passagedata pid="157" name="P3.14" tags="l14" position="3875,1450" size="100,100">(text-colour:$hero_color)[— Дяденька, довезите до дома пожалуйста. Я в ближайшей деревне живу.]
+— Тебе повезло, мы как раз туда едем. Буря успокоится и двинем.
+---
+[[Поблагодарить.-&gt;P3.15]]</tw-passagedata><tw-passagedata pid="158" name="P3.15" tags="l14" position="3800,1600" size="100,100">(text-colour:$hero_color)[— Спасибо большое!]
+— На здоровье. 
+Мутант на секунду задумался и продолжил.
+— Малой, мы знаем, как тяжело быть мутантом.
+---
+[[Слушать.-&gt;P3.16]]</tw-passagedata><tw-passagedata pid="159" name="P3.16" tags="l14" position="3800,1750" size="100,100">— Снаружи очень непросто. Такой (text-colour:$devoted_color)[преданный] друг нам не помешает. Будет худо, обращайся к Олегу. Он тебе поможет.
+— А сейчас отдыхай. Буря еще час будет.
+---
+(t8n-depart:&quot;instant&quot;)+(t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Отдохнуть.-&gt;P3.17]]</tw-passagedata><tw-passagedata pid="160" name="P3.17" tags="l3" position="3800,1900" size="100,100">Пока (text-colour:$hero_color)[ты] спал, караван доехал до деревни. (text-colour:$hero_color)[Тебя] высадили у входа и передали охраннику. Мутанты поехали дальше по делам.
+— Олег, этот пацан просто нечто. Ты уж на ним пригляди!
+---
+[[Искать друга.-&gt;P3.18]]</tw-passagedata><tw-passagedata pid="161" name="P3.18" tags="l3" position="3800,2050" size="100,100">(text-colour:$hero_color)[— Дядя Олег, я пошел дальше искать. Вдруг $pet уже вернулся?]
+— Удачи тебе, $name! Пока.
+(text-colour:$hero_color)[— До свиданья!]
+---
+[[Искать друга.-&gt;P2.2.3]]</tw-passagedata><tw-passagedata pid="162" name="P20.1" tags="l1" position="1100,1300" size="100,100">(text-colour:$hero_color)[Ты] поднял подгнившую половицу и спрятал мешок туда. Половицы даже скрипе перестала!
+
+Пока (text-colour:$hero_color)[ты] держал в руках деньги, в голове крутились идеи, куда их потратить.
+---
+[[Помечтать.-&gt;P21]]</tw-passagedata><tw-passagedata pid="163" name="P20.2" tags="l1" position="1225,1300" size="100,100">(text-colour:$hero_color)[Ты] воткнул мешок в матрас. Там выросла огромная выпуклость. (text-colour:$hero_color)[Ты] немного растолкал её. Стало получше. Чтобы точно никто не заметил, (text-colour:$hero_color)[ты] сел на выпуклость.
+
+Пока (text-colour:$hero_color)[ты] держал в руках деньги, в голове крутились идеи, куда их потратить.
+---
+[[Помечтать.-&gt;P21]]</tw-passagedata><tw-passagedata pid="164" name="P20.3" tags="l1" position="1350,1300" size="100,100">(text-colour:$hero_color)[Ты] взял лопату и вырыл яму рядом с цветком. Сложил туда деньги, зарыл обратно и прихлопнул сверху лопатой.
+
+Пока (text-colour:$hero_color)[ты] держал в руках деньги, в голове крутились идеи, куда их потратить.
+---
+[[Помечтать.-&gt;P21]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe" src="harlowe.js" type="text/javascript"></script>
 
 </body>
