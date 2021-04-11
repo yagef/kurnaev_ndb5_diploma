@@ -641,7 +641,7 @@ test
 
 Для продолжения нужно нажимать на ссылки, чтобы открывать текст или переходить на новые сцены.(click:&quot;ссылки&quot;)[ Да именно так!]
 
-В зависимости от ваших действий будет менятся и характер персонажа. От характера в игре много чего зависит.
+В зависимости от некоторых ваших действий будет менятся и характер персонажа. От характера в игре много чего зависит.
 
 Пройдите игру несколько раз, чтобы открыть все концовки. 
 
@@ -656,13 +656,13 @@ test
 Замечания и впечатления можете писать в комментариях:
 &lt;a href=https://yagef.itch.io/kurnaev-ndb5-diploma&gt;https://yagef.itch.io/kurnaev-ndb5-diploma&lt;/a&gt;
 ---
-(align:&quot;=&gt;&lt;=&quot;)[[[Начать-&gt;I-1.0]]]</tw-passagedata><tw-passagedata pid="62" name="I-1.0" tags="l5" position="150,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;) [(show:?name_prompt)] |name_prompt)[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[(click:?page)[=зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
+(align:&quot;=&gt;&lt;=&quot;)[[[Начать-&gt;I-1.0]]]</tw-passagedata><tw-passagedata pid="62" name="I-1.0" tags="l5" position="150,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
 
 (color:$hero_color)[Я] родился мутантом. В деревне (color:$hero_color)[меня] сразу невлюбили и абзывают страшным. (color:$mom_color)[Мама] говорит, что врут. (color:$mom_color)[Мама] (color:$hero_color)[меня] очень любит.](event:when $count &gt; 1)[
 
 Как (color:$hero_color)[меня] родила, (color:$mom_color)[Мама] стала сильно болеть. Почти с постели не подымается. Папа от нас ушел. Потому (color:$hero_color)[Я] сам охочусь.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)(go-to:&quot;I-1.1&quot;)}]
 ---
-(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="63" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Патом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит, что теперь в бокал поместится.(event:when $count &gt; 0)[
+(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]]</tw-passagedata><tw-passagedata pid="63" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Патом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит, что теперь в бокал поместится.(event:when $count &gt; 0)[
 
 Вокруг деревни купол. Без него все сразу ☠умрут☠. Снаружи очень жарко и ничего нет. У (color:$hero_color)[меня] кожа толстая, иногда туда выхожу.](event:when $count &gt; 1)[
 
