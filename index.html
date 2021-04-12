@@ -635,7 +635,7 @@ test
 (set: $devoted to false)
 }(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[Добро пожаловать!]
 
-Для продолжения нужно нажимать на ссылки, чтобы открывать текст или переходить на новые сцены.(click:&quot;ссылки&quot;)[ Да именно так!]
+Для продолжения нужно нажимать на |repeat&gt;[(link-repeat:&quot;ссылки&quot;)[(set: $link_count to it + 1)(if: $link_count is 1)[(replace:?text)[ (да именно так)]](else-if: $link_count is 2)[(replace:?text)[ (иногда нужно нажать несколько раз)]](else-if: $link_count is 10)[(replace:?text)[ (иногда ничего не будет происходить)]](else-if: $link_count is 15)[(replace:?text)[ (там игра ждёт)]](else-if: $link_count is 20)[(replace:?text)[ (нажмите на ссылку «Начать»)]](else-if: $link_count is 25)[(replace:?text)[ (ценю ваше упорство)]](else-if: $link_count is 35)[(replace:?text)[](replace:?repeat)[ссылки]]]]|text&gt;[], чтобы открывать текст или переходить на новые сцены.
 
 В зависимости от некоторых ваших действий будет менятся и характер персонажа. От характера в игре много чего зависит.
 
