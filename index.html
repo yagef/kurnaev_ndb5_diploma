@@ -653,7 +653,11 @@ test
 Замечания и впечатления можете писать в комментариях:
 &lt;a href=https://yagef.itch.io/kurnaev-ndb5-diploma&gt;https://yagef.itch.io/kurnaev-ndb5-diploma&lt;/a&gt;
 ---
-(align:&quot;=&gt;&lt;=&quot;)[[[Начать-&gt;I-1.0]]]</tw-passagedata><tw-passagedata pid="61" name="I-1.0" tags="l5" position="150,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
+(align:&quot;=&gt;&lt;=&quot;)[[[Начать-&gt;I-1.0]]]</tw-passagedata><tw-passagedata pid="61" name="I-1.0" tags="l5" position="150,25" size="100,100">{
+&lt;script&gt;Sound.play(0);&lt;/script&gt;
+(set:$count to 0)
+(set:$selected to false)
+}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
 
 (color:$hero_color)[Я] родился мутантом. В деревне (color:$hero_color)[меня] сразу невлюбили и абзывают страшным. (color:$mom_color)[Мама] говорит, что врут. (color:$mom_color)[Мама] (color:$hero_color)[меня] очень любит.](event:when $count &gt; 1)[
 
@@ -859,6 +863,7 @@ test
 ---
 [[Лежать.-&gt;P60.11]]</tw-passagedata><tw-passagedata pid="109" name="P60.11" tags="l5" position="2100,3650" size="100,100">{
 &lt;script&gt;Sound.play(0);&lt;/script&gt;
+(set:$count to 0)
 (if: $ending_3 is false)
 [
 	(dialog:&quot;Открыта концовка «(colour: $obedient_color)[послушный]».&quot;)
@@ -1207,6 +1212,7 @@ test
 ---
 [[Написать.-&gt;P61.11]]</tw-passagedata><tw-passagedata pid="193" name="P61.11" tags="l5" position="1400,4550" size="100,100">{
 &lt;script&gt;Sound.play(0);&lt;/script&gt;
+(set:$count to 0)
 (if: $ending_0 is false)
 [
 	(dialog:&quot;Открыта концовка «(colour: #b0b0b0)[одинокий]».&quot;)
@@ -1231,6 +1237,7 @@ test
 ---
 [[Написать.-&gt;P63.3]]</tw-passagedata><tw-passagedata pid="196" name="P63.3" tags="l5" position="1550,4550" size="100,100">{
 &lt;script&gt;Sound.play(0);&lt;/script&gt;
+(set:$count to 0)
 (if: $ending_1 is false)
 [
 	(dialog:&quot;Открыта концовка «(colour: $devoted_color)[преданный]».&quot;)
@@ -1251,6 +1258,7 @@ test
 ---
 [[Написать.-&gt;P62.3]]</tw-passagedata><tw-passagedata pid="199" name="P62.3" tags="l5" position="1825,3800" size="100,100">{
 &lt;script&gt;Sound.play(0);&lt;/script&gt;
+(set:$count to 0)
 (if: $ending_2 is false)
 [
 	(dialog:&quot;Открыта концовка «(colour: $not_obedient_color)[жестокий]».&quot;)
