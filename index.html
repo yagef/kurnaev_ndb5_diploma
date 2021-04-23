@@ -8,7 +8,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Kurnaev_Diploma_nd5.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Kurnaev_Diploma_nd5" startnode="60" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="0.6" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+<tw-storydata name="Kurnaev_Diploma_nd5" startnode="60" creator="Twine" creator-version="2.3.12" ifid="39F48CE6-483F-478B-9216-AF5E11DC438E" zoom="0.25" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 h1 {
     margin: 0.3em 0 0.3em 0;
@@ -656,19 +656,19 @@ test
 &lt;script&gt;Sound.play(0);&lt;/script&gt;
 (set:$count to 0)
 (set:$selected to false)
-}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ зовут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
+}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ завут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
 
-(color:$hero_color)[Я] родился мутантом. В деревне (color:$hero_color)[меня] сразу невлюбили и абзывают страшным. (color:$mom_color)[Мама] говорит, что врут. (color:$mom_color)[Мама] (color:$hero_color)[меня] очень любит.](event:when $count &gt; 1)[
+(color:$hero_color)[Я] радился мутантом. В диревне (color:$hero_color)[миня] сразу невлюбили и абзывают страшным. (color:$mom_color)[Мама] говорит што врут. (color:$mom_color)[Мама] (color:$hero_color)[миня] очень любит.](event:when $count &gt; 1)[
 
-Как (color:$hero_color)[меня] родила, (color:$mom_color)[Мама] стала сильно болеть. Почти с постели не подымается. Папа от нас ушел. Потому (color:$hero_color)[Я] сам охочусь.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)(go-to:&quot;I-1.1&quot;)}]
+Как (color:$hero_color)[миня] родила (color:$mom_color)[Мама] стала сильно балеть. Почти с постели не подымается. Папа от нас ушел. Потому (color:$hero_color)[Я] сам ахочусь.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)(go-to:&quot;I-1.1&quot;)}]
 ---
-(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]]</tw-passagedata><tw-passagedata pid="62" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Патом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит, что теперь в бокал поместится.(event:when $count &gt; 0)[
+(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]]</tw-passagedata><tw-passagedata pid="62" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Патом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит што теперь в бакал поместится.(event:when $count &gt; 0)[
 
-Вокруг деревни купол. Без него все сразу ☠умрут☠. Снаружи очень жарко и ничего нет. У (color:$hero_color)[меня] кожа толстая, иногда туда выхожу.](event:when $count &gt; 1)[
+Вокруг деревни купол. Без него все сразу ☠умрут☠. Снаружи очень жарко и ничего нет. У (color:$hero_color)[миня] кожа толстая, иногда туда выхожу.](event:when $count &gt; 1)[
 
-У (color:$hero_color)[меня] есть питомец — крысопёс. Зовут (color:$pet_color)[$pet]. (color:$hero_color)[Я] его очень люблю. Кормлю вкусняшками. Он мутант, как и (color:$hero_color)[Я].](event:when $count &gt; 2)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P0.1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
+У (color:$hero_color)[миня] есть питомец — крысопёс. Зовут (color:$pet_color)[$pet]. (color:$hero_color)[Я] его очень люблю. Кормлю вкусняшками. Он мутант, как и (color:$hero_color)[Я].](event:when $count &gt; 2)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P0.1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
 
-Иногда к нам в деревню приезжает караван. (color:$hero_color)[Я] разговариваю с охранниками. Они тоже мутанты. Когда (color:$hero_color)[Я] вырасту, тоже стану охранником. Буду большим и сильным.]
+Иногда к нам в диревню приезжает караван. (color:$hero_color)[Я] разговариваю с ахранниками. Они тоже мутанты. Когда (color:$hero_color)[Я] вырасту тоже стану ахранником. Буду большим и сильным.]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="63" name="P2.1" tags="l15" position="300,525" size="100,100">(text-colour:$hero_color)[Ты] вышел на улицу. Первым делом подошел к выходу из купола. У дома родителей (text-colour:$hero_color)[тебе] попалась (text-colour:$rose_color)[Роза].
 (text-colour:$rose_color)[— Привет, $name! Что делаешь?]
@@ -691,7 +691,7 @@ test
 [[Открыть калитку.-&gt;P0.2]]</tw-passagedata><tw-passagedata pid="69" name="P0.2" tags="l10" position="575,25" size="100,100">(color:$hero_color)[— Хорошо, Мама!]
 (color:$mom_color)[Мама] в последнее время часто болеет. Доктор приходит почти каждый день. Он уже ждет у калитки.
 ---
-[[Впустить доктора.-&gt;P0.3]]</tw-passagedata><tw-passagedata pid="70" name="P0.3" tags="l10" position="725,25" size="100,100">(color:$hero_color)[Ты] открыл затвор. Доктор вошел и поздоровался:
+[[Впустить доктора.-&gt;P0.3]]</tw-passagedata><tw-passagedata pid="70" name="P0.3" tags="l10" position="725,25" size="100,100">(color:$hero_color)[Ты] открыл калитку. Доктор вошел и поздоровался:
 — Привет, как твоя (color:$mom_color)[Мама]?
 ---
 [[Промолчать.-&gt;P0.4]]
@@ -718,7 +718,7 @@ test
 (color:$hero_color)[— Нет-нет-нет! Говорите при мне!]
 Доктор не стал дальше слушать. Взял подмышку и вытолкнул за дверь. Чего они там секретничают?
 ---
-[[Остаться за дверью.-&gt;P0.10]]</tw-passagedata><tw-passagedata pid="77" name="P0.10" tags="l12" position="1675,25" size="100,100">(if: $obedient is true)[(color:$mom_color)[Мама] же не сказала сразу идти к себе? Постой тут немного.](else:)[(color:$hero_color)[Ты] громко утопал в комнату, будто ушел. Потом на цыпочках вернулся назад. Теперь они думают, что (color:$hero_color)[ты] ушел.]
+[[Остаться за дверью.-&gt;P0.10]]</tw-passagedata><tw-passagedata pid="77" name="P0.10" tags="l12" position="1675,25" size="100,100">(if: $obedient is true)[(color:$mom_color)[Мама] же не сказала сразу идти к себе? Постоишь тут немного.](else:)[(color:$hero_color)[Ты] громко утопал в комнату, будто ушел. Потом на цыпочках вернулся назад. Теперь они думают, что (color:$hero_color)[ты] ушел.]
 
 В двери есть дырка. Когда-то здесь был замок.
 ---
@@ -733,9 +733,9 @@ test
 &quot;)[(set:$count to it + 1)(append: ?text)[— Я знаю хорошую семью, мы можем его туда устроить.
 (color:$mom_color)[— Правда? Доктор, спасибо!]
 — Ну-ну, я его не брошу. А сейчас отдыхайте. Я вернусь завтра.
-]](event:when $count &gt;= 2)[[[Спрятаться к себе в комнату.-&gt;P0.13]]]</tw-passagedata><tw-passagedata pid="80" name="P0.13" tags="l5" position="2125,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Доктор сразу ушел. Даже не попрощался. (color:$mom_color)[Мама] сразу легла спать. (color:$hero_color)[Я] не стал её будить.(event:when $count &gt; 0)[
+]](event:when $count &gt;= 2)[[[Спрятаться к себе в комнату.-&gt;P0.13]]]</tw-passagedata><tw-passagedata pid="80" name="P0.13" tags="l5" position="2125,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Доктор сразу ушел. Даже не попращался. (color:$mom_color)[Мама] сразу легла спать. (color:$hero_color)[Я] не стал её будить.(event:when $count &gt; 0)[
 
-(color:$hero_color)[Я] не могу заснуть. О чем они говорили? (color:$mom_color)[Мама] умирает?{&lt;script&gt;Sound.stop(0);&lt;/script&gt;(set:$count to 0)}(replace: ?end)[(link-goto: &quot;Проверить Маму.&quot;,&quot;P0.14&quot;)]]
+(color:$hero_color)[Я] не могу заснуть. О чем они гаварили? (color:$mom_color)[Мама] умерает?{&lt;script&gt;Sound.stop(0);&lt;/script&gt;(set:$count to 0)}(replace: ?end)[(link-goto: &quot;Проверить Маму.&quot;,&quot;P0.14&quot;)]]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="81" name="P0.14" tags="l11" position="2275,25" size="100,100">(set:$count to 0)|text&gt;[][---](link:&quot;Осмотреть.
 &quot;)[(set:$count to it + 1)(append:?text)[(color:$mom_color)[Мама] лежит на кровати. Она очень спокойная. Даже слишком.
@@ -767,15 +767,15 @@ test
 Дядя взял (color:$hero_color)[тебя] за шкирку, кинул в комнату и запер. Сегодня все такие грубые.
 ---
 [[Кричать.-&gt;P0.21]]
-[[Биться о дверь.-&gt;P0.21]]</tw-passagedata><tw-passagedata pid="88" name="P0.25" tags="l5" position="3950,50" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Привет, дневник. Извини, не писал тебе уже две недели. Было много всего нового.(event:when $count &gt; 0)[
+[[Биться о дверь.-&gt;P0.21]]</tw-passagedata><tw-passagedata pid="88" name="P0.25" tags="l5" position="3950,50" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Привет дневник. Извени не писал тебе уже две недели. Было много всего нового.(event:when $count &gt; 0)[
 
-(color:$mom_color)[Мама] умерла. (color:$hero_color)[Я] много плакал, мне было страшно. Всюду ходили странные люди и жалели меня. (color:$hero_color)[Я] не знал, что со мной будет.](event:when $count &gt; 1)[
+(color:$mom_color)[Мама] умерла. (color:$hero_color)[Я] много плакал мне было страшно. Всюду хадили страные люди и жалели (color:$hero_color)[миня]. (color:$hero_color)[Я] не знал что со мной будет.](event:when $count &gt; 1)[
 
-Но (color:$hero_color)[мне] повезло. (color:$hero_color)[Мне] нашли новую семью. (color:$new_mom_color)[Маму], (color:$dad_color)[Отца] и даже сестренку — (color:$rose_color)[Розу]. Новые (color:$new_mom_color)[Мама] и (color:$dad_color)[Отец] хорошие. Они (color:$hero_color)[меня] кормят и одевают.](event:when $count &gt; 2)[
+Но (color:$hero_color)[мне] повезло. (color:$hero_color)[Мне] нашли новую семью. (color:$new_mom_color)[Маму] (color:$dad_color)[Отца] и даже систренку — (color:$rose_color)[Розу]. Новые (color:$new_mom_color)[Мама] и (color:$dad_color)[Отец] хорошие. Они (color:$hero_color)[миня] кормят и одевают.](event:when $count &gt; 2)[
 
-Им не понравилось, что (color:$hero_color)[Я] читаю и пишу. Умный не по годам, говорят. Приходится писать дневник украдкой.](event:when $count &gt; 3)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
+Им не понравилось (color:$hero_color)[Я] читаю и пишу. Говорят умный не по годам. Приходится писать дневник украдкай.](event:when $count &gt; 3)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
 
-(color:$pet_color)[$pet] им тоже не понравился. (color:$hero_color)[Я] часто сплю с ним в сарае. Здесь (color:$hero_color)[меня] никто не беспокоит.]
+(color:$pet_color)[$pet] им тоже не понравился. (color:$hero_color)[Я] часто сплю с ним в сарае. Здесь (color:$hero_color)[миня] никто не беспокоит.]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="89" name="P0.21" tags="l12" position="3175,175" size="100,100">Никто не пришел. Они оглохли там что ли?
 (color:$hero_color)[— Выпустите! Я всё Маме расскажу!]
@@ -869,11 +869,11 @@ test
 	(set: $opened_endings to it + 1)
 	(set: $ending_3 to true)
 ]
-}Привет, дарогой дневник. (text-colour:$hero_color)[Я] знаю, что ты не настоящий. Но мне тебя так не хватает. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
+}Привет дарогой дневник. (text-colour:$hero_color)[Я] знаю ты не настоящий. Но (text-colour:$hero_color)[мне] тебя так не хватает. Это (text-colour:$hero_color)[мая] последняя запись.(event:when $count &gt; 0)[
 
-Взрослые всегда говорили, что (text-colour:$hero_color)[мне] делать. (text-colour:$hero_color)[Я] слушался. Всем нравился послушный мальчик.](event:when $count &gt; 1)[
+Взрослые всегда гаварили что (text-colour:$hero_color)[мне] делать. (text-colour:$hero_color)[Я] слушался. Всем нравился паслушный мальчик.](event:when $count &gt; 1)[
 
-(text-colour:$hero_color)[Я] лежу на кровати, где (text-colour:$mom_color)[Мама] умерла. Мы обязательно встретимся с ней на небесах.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(if: $obedient is false)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
+(text-colour:$hero_color)[Я] лежу на кровати где (text-colour:$mom_color)[Мама] умерла. Мы обязательно встретимся на нибесах.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(if: $obedient is false)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
 ](align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С НАЧАЛА ⟲&quot;, &quot;Intro&quot;)]]]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="110" name="P0.23.1" tags="l12" position="3600,25" size="100,100">В окно кто-то скребется. (colour: $hero_color)[Ты] выглянул наружу — это (colour: $pet_color)[$pet]!
@@ -889,7 +889,7 @@ test
 (t8n-arrive:&quot;blur&quot;)+(t8n-time:2s)[[Обнять.-&gt;P0.25]]</tw-passagedata><tw-passagedata pid="113" name="P0.5.1" tags="l10" position="1025,25" size="100,100">На шум прибежал (text-colour:$pet_color)[$pet]! Он радостно прыгает вокруг.
 ---
 [[Поиграть.-&gt;P0.5.2]]
-[[Прогнать.-&gt;P0.5.3]]</tw-passagedata><tw-passagedata pid="114" name="P0.5.2" tags="l10" position="1150,175" size="100,100">(text-colour:$hero_color)[Ты] склоняешься над крысопсом и погладил его. (text-colour:$pet_color)[$pet] рад тебя видеть.
+[[Прогнать.-&gt;P0.5.3]]</tw-passagedata><tw-passagedata pid="114" name="P0.5.2" tags="l10" position="1150,175" size="100,100">(text-colour:$hero_color)[Ты] склоняешься над крысопсом и гладишь его. (text-colour:$pet_color)[$pet] рад тебя видеть.
 —$name, пошли скорей. Мне некогда тебя ждать!
 ---
 [[Проводить.-&gt;P0.6]]</tw-passagedata><tw-passagedata pid="115" name="P0.5.3" tags="l10" position="1150,25" size="100,100">(text-colour:$hero_color)[— Иди к себе! Не до тебя сейчас!]
@@ -1164,7 +1164,7 @@ test
 (text-colour:$rose_color)[— Так… Почти готово, нужно провести усмирительные меры. Пациент должен лежать спокойно.]
 ---
 [[Пожаловаться.-&gt;P59.4]]
-[[Попытаться встать.-&gt;P59.5]]</tw-passagedata><tw-passagedata pid="181" name="P61" tags="l11" position="1550,3200" size="100,100">(text-colour:$hero_color)[Ты] резко дернулся. Ослабшие веревки слетели с (text-colour:$hero_color)[тебя].
+[[Встать.-&gt;P59.5]]</tw-passagedata><tw-passagedata pid="181" name="P61" tags="l11" position="1550,3200" size="100,100">(text-colour:$hero_color)[Ты] резко дернулся. Ослабшие веревки слетели с (text-colour:$hero_color)[тебя].
 (text-colour:$rose_color)[— Пациент! Лежите смирно!]
 ---
 [[Остаться на месте.-&gt;P61.1]]
@@ -1172,7 +1172,7 @@ test
 (text-colour:$rose_color)[— Ты чего вскочил?]
 ---
 [[Пожаловаться.-&gt;61.3]]
-[[Попроситься уйти.-&gt;61.4]]</tw-passagedata><tw-passagedata pid="183" name="P62" tags="l11" position="1825,3350" size="100,100">(text-colour:$hero_color)[Ты] толкнул (text-colour:$rose_color)[Розу] и выхватил нож.
+[[Попроситься уйти.-&gt;61.4]]</tw-passagedata><tw-passagedata pid="183" name="P62" tags="l11" position="1821,3350" size="100,100">(text-colour:$hero_color)[Ты] толкнул (text-colour:$rose_color)[Розу] и выхватил нож.
 (text-colour:$rose_color_angry)[— Ты сдурел? Что творишь!]
 ---
 [[Напасть!-&gt;P62.1]]</tw-passagedata><tw-passagedata pid="184" name="61.3" tags="l11" position="1400,3500" size="100,100">(text-colour:$hero_color)[— Роза, мне не нравятся твои игры. Ты жестокая.]
@@ -1218,11 +1218,11 @@ test
 	(set: $opened_endings to it + 1)
 	(set: $ending_0 to true)
 ]
-}Привет, дарогой дневник. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
+}Привет дарогой дневник. Это (text-colour:$hero_color)[мая] последняя запись.(event:when $count &gt; 0)[
 
 (text-colour:$hero_color)[Мне] придётся искать новое место. Уже второй раз. Найду ли (text-colour:$hero_color)[Я] его когда-нибудь?](event:when $count &gt; 1)[
 
-(text-colour:$hero_color)[Я] не знаю, но попробовать стоит.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
+(text-colour:$hero_color)[Я] не знаю но папробовать стоит.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С НАЧАЛА ⟲&quot;, &quot;Intro&quot;)]]]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="194" name="P63.1" tags="l11" position="1550,4250" size="100,100">(text-colour:$hero_color)[— Мне здесь не место. Пойду, туда где пригожусь.]
@@ -1243,11 +1243,11 @@ test
 	(set: $opened_endings to it + 1)
 	(set: $ending_1 to true)
 ]
-}Привет, дарогой дневник. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
+}Привет дарогой дневник. Это (text-colour:$hero_color)[мая] паследняя запись.(event:when $count &gt; 0)[
 
-(text-colour:$hero_color)[Я] потерял семью. Потом еще одну. Надеюсь, в новой семье я задержусь надолго.](event:when $count &gt; 1)[
+(text-colour:$hero_color)[Я] потерял симью. Потом еще одну. В новой симье (text-colour:$hero_color)[Я] задержусь надолго.](event:when $count &gt; 1)[
 
-Для счастья (text-colour:$hero_color)[мне] надо не так уж и много. Любить и быть любимым.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
+Для щастья (text-colour:$hero_color)[мне] много не надо. Любить и быть любимым.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С НАЧАЛА ⟲&quot;, &quot;Intro&quot;)]]]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata><tw-passagedata pid="197" name="P62.1" tags="l11" position="1825,3500" size="100,100">В приступе ярости (text-colour:$hero_color)[ты] протыкаешь (text-colour:$rose_color)[Розу] ножом. Она тихонько вздыхает и падает на землю.
@@ -1264,11 +1264,11 @@ test
 	(set: $opened_endings to it + 1)
 	(set: $ending_2 to true)
 ]
-}Привет, дарогой дневник. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
+}Привет дарогой дневник. Это (text-colour:$hero_color)[моя] последняя запись.(event:when $count &gt; 0)[
 
 Люди злые. Никому нельзя верить. Но (text-colour:$hero_color)[Я] не так прост.](event:when $count &gt; 1)[
 
-(text-colour:$hero_color)[Я] не буду никому подчинятся. Буду делать, что хочу.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
+(text-colour:$hero_color)[Я] не буду никаму подчинятся. Буду делать что хачу.](event:when $count &gt; 2)[{&lt;script&gt;Sound.stop(0);&lt;/script&gt;}(replace: ?end)[(align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С ИГРЫ РОЗЫ ⟲&quot;,&quot;P58&quot;)]
 (align:&quot;=&gt;&lt;=&quot;)+(box:&quot;X&quot;)[#(link-goto:&quot;С НАЧАЛА ⟲&quot;, &quot;Intro&quot;)]]]
 ---
 |end&gt;[(link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]</tw-passagedata></tw-storydata>
