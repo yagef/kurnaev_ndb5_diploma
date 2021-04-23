@@ -656,7 +656,7 @@ test
 &lt;script&gt;Sound.play(0);&lt;/script&gt;
 (set:$count to 0)
 (set:$selected to false)
-}~~Здраству~~ ~~Здаству~~ Привет, дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ завут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
+}~~Здраству~~ ~~Здаству~~ Привет дневник. (color:$hero_color)[Меня] (link:&quot;зовут…&quot;)[(show:?name_prompt) |name_prompt&gt;[(set: $selected to true)(set: $name to (trimmed:(prompt: &quot;Как меня зовут?&quot;, $name, &quot;Неважно&quot;, &quot;Вот так&quot;)))](event:when $selected is true)[ завут (color:$hero_color)[$name]. Мне 6 лет и 4 месяца. (color:$hero_color)[Я] люблю читать.(event:when $count &gt; 0)[
 
 (color:$hero_color)[Я] радился мутантом. В диревне (color:$hero_color)[миня] сразу невлюбили и абзывают страшным. (color:$mom_color)[Мама] говорит што врут. (color:$mom_color)[Мама] (color:$hero_color)[миня] очень любит.](event:when $count &gt; 1)[
 
@@ -664,9 +664,9 @@ test
 ---
 (link-repeat: &quot;Писать дальше.&quot;)[(set:$count to it + 1)]]]</tw-passagedata><tw-passagedata pid="62" name="I-1.1" tags="l5" position="275,25" size="100,100">{&lt;script&gt;Sound.play(0);&lt;/script&gt;(set:$count to 0)}Наша деревня у озера Бакал. Когда-то озеро было очень большое. Патом пришла жара. Озеро почти высохло. (color:$mom_color)[Мама] говорит што теперь в бакал поместится.(event:when $count &gt; 0)[
 
-Вокруг деревни купол. Без него все сразу ☠умрут☠. Снаружи очень жарко и ничего нет. У (color:$hero_color)[миня] кожа толстая, иногда туда выхожу.](event:when $count &gt; 1)[
+Вокруг деревни купол. Без него все сразу ☠умрут☠. Снаружи очень жарко и ничего нет. У (color:$hero_color)[миня] кожа толстая иногда туда выхажу.](event:when $count &gt; 1)[
 
-У (color:$hero_color)[миня] есть питомец — крысопёс. Зовут (color:$pet_color)[$pet]. (color:$hero_color)[Я] его очень люблю. Кормлю вкусняшками. Он мутант, как и (color:$hero_color)[Я].](event:when $count &gt; 2)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P0.1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
+У (color:$hero_color)[миня] есть питомец крысопёс. Зовут (color:$pet_color)[$pet]. (color:$hero_color)[Я] его очень люблю. Кормлю вкусняшками. Он мутант как и (color:$hero_color)[Я].](event:when $count &gt; 2)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P0.1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
 
 Иногда к нам в диревню приезжает караван. (color:$hero_color)[Я] разговариваю с ахранниками. Они тоже мутанты. Когда (color:$hero_color)[Я] вырасту тоже стану ахранником. Буду большим и сильным.]
 ---
@@ -771,7 +771,7 @@ test
 
 (color:$mom_color)[Мама] умерла. (color:$hero_color)[Я] много плакал мне было страшно. Всюду хадили страные люди и жалели (color:$hero_color)[миня]. (color:$hero_color)[Я] не знал что со мной будет.](event:when $count &gt; 1)[
 
-Но (color:$hero_color)[мне] повезло. (color:$hero_color)[Мне] нашли новую семью. (color:$new_mom_color)[Маму] (color:$dad_color)[Отца] и даже систренку — (color:$rose_color)[Розу]. Новые (color:$new_mom_color)[Мама] и (color:$dad_color)[Отец] хорошие. Они (color:$hero_color)[миня] кормят и одевают.](event:when $count &gt; 2)[
+Но (color:$hero_color)[мне] повезло. (color:$hero_color)[Мне] нашли новую семью. (color:$new_mom_color)[Маму] (color:$dad_color)[Отца] и даже систренку (color:$rose_color)[Розу]. Новые (color:$new_mom_color)[Мама] и (color:$dad_color)[Отец] хорошие. Они (color:$hero_color)[миня] кормят и одевают.](event:when $count &gt; 2)[
 
 Им не понравилось (color:$hero_color)[Я] читаю и пишу. Говорят умный не по годам. Приходится писать дневник украдкай.](event:when $count &gt; 3)[(replace: ?end)[(link-reveal-goto: &quot;Закончить писать.&quot;,&quot;P1&quot;)[{&lt;script&gt;Sound.stop(0);Sound.play_once(1);&lt;/script&gt;(set:$count to 0)}]]
 
